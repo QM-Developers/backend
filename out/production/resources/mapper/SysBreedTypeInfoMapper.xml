@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qm.backend.mapper.SysBreedTypeInfoMapper">
+  <resultMap id="BaseResultMap" type="com.qm.backend.pojo.SysBreedTypeInfo">
+    <id column="info_id" jdbcType="VARCHAR" property="infoId" />
+    <result column="info_name" jdbcType="VARCHAR" property="infoName" />
+    <result column="info_type" jdbcType="VARCHAR" property="infoType" />
+    <result column="select_id" jdbcType="VARCHAR" property="selectId" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    info_id, info_name, info_type, select_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sys_breed_type_info
+    where info_id = #{infoId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from sys_breed_type_info
+    where info_id = #{infoId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.qm.backend.pojo.SysBreedTypeInfoExample">
+    delete from sys_breed_type_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.qm.backend.pojo.SysBreedTypeInfo">
+    insert into sys_breed_type_info (info_id, info_name, info_type, 
+      select_id)
+    values (#{infoId,jdbcType=VARCHAR}, #{infoName,jdbcType=VARCHAR}, #{infoType,jdbcType=VARCHAR}, 
+      #{selectId,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qm.backend.pojo.SysBreedTypeInfo">
+    insert into sys_breed_type_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="infoId != null">
+        info_id,
+      </if>
+      <if test="infoName != null">
+        info_name,
+      </if>
+      <if test="infoType != null">
+        info_type,
+      </if>
+      <if test="selectId != null">
+        select_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="infoId != null">
+        #{infoId,jdbcType=VARCHAR},
+      </if>
+      <if test="infoName != null">
+        #{infoName,jdbcType=VARCHAR},
+      </if>
+      <if test="infoType != null">
+        #{infoType,jdbcType=VARCHAR},
+      </if>
+      <if test="selectId != null">
+        #{selectId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.qm.backend.pojo.SysBreedTypeInfoExample" resultType="java.lang.Long">
+    select count(*) from sys_breed_type_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update sys_breed_type_info
+    <set>
+      <if test="record.infoId != null">
+        info_id = #{record.infoId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.infoName != null">
+        info_name = #{record.infoName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.infoType != null">
+        info_type = #{record.infoType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.selectId != null">
+        select_id = #{record.selectId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update sys_breed_type_info
+    set info_id = #{record.infoId,jdbcType=VARCHAR},
+      info_name = #{record.infoName,jdbcType=VARCHAR},
+      info_type = #{record.infoType,jdbcType=VARCHAR},
+      select_id = #{record.selectId,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qm.backend.pojo.SysBreedTypeInfo">
+    update sys_breed_type_info
+    <set>
+      <if test="infoName != null">
+        info_name = #{infoName,jdbcType=VARCHAR},
+      </if>
+      <if test="infoType != null">
+        info_type = #{infoType,jdbcType=VARCHAR},
+      </if>
+      <if test="selectId != null">
+        select_id = #{selectId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where info_id = #{infoId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qm.backend.pojo.SysBreedTypeInfo">
+    update sys_breed_type_info
+    set info_name = #{infoName,jdbcType=VARCHAR},
+      info_type = #{infoType,jdbcType=VARCHAR},
+      select_id = #{selectId,jdbcType=VARCHAR}
+    where info_id = #{infoId,jdbcType=VARCHAR}
+  </update>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <select id="selectByExample" parameterType="com.qm.backend.pojo.SysBreedTypeInfoExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from sys_breed_type_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    LIMIT #{pageNum},#{pageSize}
+  </select>
+
+
+</mapper>

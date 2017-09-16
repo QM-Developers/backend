@@ -1,0 +1,22 @@
+{
+  "result": [
+    {
+      "selectId": "2445092751d04d78b3facaea5d8044a6",
+      "typeId": "335c5c7dd59344acba81d6bbd0ca1506",
+      "selectName": "猪"
+    },
+    {
+      "selectId": "3a2d8ff53ebc403a923f9dcbb22f9d02",
+      "typeId": "335c5c7dd59344acba81d6bbd0ca1506",
+      "selectName": "鱼"
+    },
+    {
+      "selectId": "ff07eef884bf4291a1477dc6f3d20301",
+      "typeId": "335c5c7dd59344acba81d6bbd0ca1506",
+      "selectName": "虾"
+    }
+  ],
+  "pageCount": 1,
+  "state": 100,
+  "token": "1"
+}
