@@ -5,10 +5,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.qm.backend.constant.*;
 import com.qm.backend.mapper.SysUserMapper;
 import com.qm.backend.mapper.SysUserRoleReMapper;
-import com.qm.backend.pojo.SysUser;
-import com.qm.backend.pojo.SysUserExample;
-import com.qm.backend.pojo.SysUserRoleRe;
-import com.qm.backend.pojo.SysUserRoleReExample;
+import com.qm.backend.pojo.*;
 import com.qm.backend.util.CryptographyUtil;
 import com.qm.backend.util.IDGeneratorUtil;
 import com.qm.backend.util.PagingUtil;
@@ -51,7 +48,7 @@ public class SysUserServiceImpl implements SysUserService
     @Override
     public String update(SessionVO sessionVO, SysUser user)
     {
-        user.setUserId(sessionVO.getUserId());
+        user.setUserId(user.getMemberId());
         int result = mapper.updateByPrimaryKeySelective(user);
         result = result < 1 ? RequestConstant.FAILED : RequestConstant.SUCCEED;
 
@@ -66,6 +63,9 @@ public class SysUserServiceImpl implements SysUserService
         example.setPageSize(pageVO.getPageSize());
 
         List<SysUser> result = mapper.selectByExample(example);
+        for (SysUser user : result)
+            user.setRoleList(mapper.listRole(user.getUserId()));
+
         int pageCount = PagingUtil.getCount((int) mapper.countByExample(example), pageVO.getPageSize());
 
         JSONObject json = (JSONObject) JSONObject.toJSON(new ResultVO((int) RequestConstant.SUCCEED, sessionVO.getToken(), result));
@@ -77,7 +77,7 @@ public class SysUserServiceImpl implements SysUserService
     @Override
     public String get(SessionVO sessionVO, SysUser user)
     {
-        SysUser result = mapper.selectByPrimaryKey(user.getUserId());
+        SysUser result = mapper.selectByPrimaryKey(user.getMemberId());
         int flag = result == null ? RequestConstant.FAILED : RequestConstant.SUCCEED;
 
         return JSONObject.toJSONString(new ResultVO(flag, sessionVO.getToken(), result));
@@ -89,8 +89,15 @@ public class SysUserServiceImpl implements SysUserService
         SysUserRoleReExample example = new SysUserRoleReExample();
         SysUserRoleReExample.Criteria criteria = example.createCriteria();
 
-        criteria.andUserIdEqualTo(user.getUserId());
+        criteria.andUserIdEqualTo(user.getMemberId());
+        criteria.andRoleIdEqualTo(RoleConstant.ADMINISTRATOR);
 
+        if (roleReMapper.countByExample(example) > 0)
+            return JSONObject.toJSONString(new ResultVO((int) RequestConstant.FAILED_102, sessionVO.getToken()));
+
+        example.clear();
+        criteria = example.createCriteria();
+        criteria.andUserIdEqualTo(user.getMemberId());
         roleReMapper.deleteByExample(example);
 
         JSONArray jArr = JSONArray.parseArray(user.getRole());
@@ -99,12 +106,12 @@ public class SysUserServiceImpl implements SysUserService
 
         for (Object role : jArr)
         {
-            roleRe = JSONObject.parseObject(role.toString(),SysUserRoleRe.class);
+            roleRe = JSONObject.parseObject(role.toString(), SysUserRoleRe.class);
 
             if (RoleConstant.ADMINISTRATOR.equals(roleRe.getRoleId()))
-                return JSONObject.toJSONString(new ResultVO((int) RequestConstant.FAILED_102,sessionVO.getToken()));
+                return JSONObject.toJSONString(new ResultVO((int) RequestConstant.FAILED_102, sessionVO.getToken()));
 
-            roleRe.setUserId(user.getUserId());
+            roleRe.setUserId(user.getMemberId());
             roleReList.add(roleRe);
         }
 
@@ -112,8 +119,17 @@ public class SysUserServiceImpl implements SysUserService
             if (roleReMapper.insert(role) < 1)
                 throw new RuntimeException(Constant.SAVE_FAILED);
 
-        return JSONObject.toJSONString(new ResultVO((int) RequestConstant.SUCCEED,sessionVO.getToken()));
+        return JSONObject.toJSONString(new ResultVO((int) RequestConstant.SUCCEED, sessionVO.getToken()));
     }
 
+    @Override
+    public String remove(SessionVO sessionVO, SysUser user)
+    {
+        int result = mapper.deleteByPrimaryKey(user.getMemberId());
+
+        result = result < 1 ? RequestConstant.FAILED : RequestConstant.SUCCEED;
+
+        return JSONObject.toJSONString(new ResultVO(result, sessionVO.getToken()));
+    }
 
 }

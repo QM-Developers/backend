@@ -46,6 +46,22 @@ public class SysUserController
     }
 
     /**
+     * 删除系统用户
+     *
+     * @param request 当前用户信息
+     * @param user    用户Id
+     * @return 操作结果
+     */
+    @RequestMapping(value = "/user/remove", method = POST, produces = {RequestConstant.CONTENT_TYPE})
+    @ResponseBody
+    public String remove(HttpServletRequest request, SysUser user)
+    {
+        SessionVO sessionVO = (SessionVO) request.getAttribute(KeyConstant.LOGIN_INFO);
+
+        return service.remove(sessionVO, user);
+    }
+
+    /**
      * 修改系统用户
      *
      * @param request 当前用户信息

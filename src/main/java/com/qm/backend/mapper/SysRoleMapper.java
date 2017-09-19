@@ -1,5 +1,6 @@
 package com.qm.backend.mapper;
 
+import com.qm.backend.pojo.SysPermission;
 import com.qm.backend.pojo.SysRole;
 import com.qm.backend.pojo.SysRoleExample;
 import java.util.List;
@@ -29,4 +30,6 @@ public interface SysRoleMapper {
     int updateByPrimaryKeySelective(SysRole record);
 
     int updateByPrimaryKey(SysRole record);
+
+    List<SysPermission> listPermission(@Param("roleId") String roleId);
 }

@@ -88,17 +88,18 @@ public class SysBreedTypeInfoController
      */
     @RequestMapping(value = PREFIX + "list", method = POST, produces = {RequestConstant.CONTENT_TYPE})
     @ResponseBody
-    public String list(HttpServletRequest request, PageVO pageVO)
+    public String list(HttpServletRequest request, SysBreedTypeInfo info, PageVO pageVO)
     {
         SessionVO sessionVO = (SessionVO) request.getAttribute(KeyConstant.LOGIN_INFO);
 
-        return service.list(sessionVO, pageVO);
+        return service.list(sessionVO, info, pageVO);
     }
 
     /**
      * 获取养殖类目信息详情
+     *
      * @param request 当前用户信息
-     * @param info 养殖类目信息Id
+     * @param info    养殖类目信息Id
      * @return 养殖类目信息详情
      */
     @RequestMapping(value = PREFIX + "get", method = POST, produces = {RequestConstant.CONTENT_TYPE})

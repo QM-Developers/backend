@@ -88,11 +88,11 @@ public class SysBreedTypeController
      */
     @RequestMapping(value = PREFIX + "list", method = POST, produces = {RequestConstant.CONTENT_TYPE})
     @ResponseBody
-    public String list(HttpServletRequest request, PageVO pageVO)
+    public String list(HttpServletRequest request, SysBreedType type, PageVO pageVO)
     {
         SessionVO sessionVO = (SessionVO) request.getAttribute(KeyConstant.LOGIN_INFO);
 
-        return service.list(sessionVO, pageVO);
+        return service.list(sessionVO, type, pageVO);
     }
 
     /**

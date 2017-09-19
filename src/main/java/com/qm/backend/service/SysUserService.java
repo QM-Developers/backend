@@ -15,4 +15,6 @@ public interface SysUserService
     String get(SessionVO sessionVO, SysUser user);
 
     String updateRole(SessionVO sessionVO, SysUser user);
+
+    String remove(SessionVO sessionVO, SysUser user);
 }

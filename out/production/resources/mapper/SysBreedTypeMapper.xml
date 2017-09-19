@@ -5,6 +5,7 @@
     <id column="type_id" jdbcType="VARCHAR" property="typeId" />
     <result column="type_name" jdbcType="VARCHAR" property="typeName" />
     <result column="select_id" jdbcType="VARCHAR" property="selectId" />
+    <result column="select_name" jdbcType="VARCHAR" property="selectName" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -65,7 +66,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    type_id, type_name, select_id
+    type_id, type_name, select_id, select_name
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select 
@@ -84,10 +85,10 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.qm.backend.pojo.SysBreedType">
-    insert into sys_breed_type (type_id, type_name, select_id
-      )
-    values (#{typeId,jdbcType=VARCHAR}, #{typeName,jdbcType=VARCHAR}, #{selectId,jdbcType=VARCHAR}
-      )
+    insert into sys_breed_type (type_id, type_name, select_id, 
+      select_name)
+    values (#{typeId,jdbcType=VARCHAR}, #{typeName,jdbcType=VARCHAR}, #{selectId,jdbcType=VARCHAR}, 
+      #{selectName,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.qm.backend.pojo.SysBreedType">
     insert into sys_breed_type
@@ -101,6 +102,9 @@
       <if test="selectId != null">
         select_id,
       </if>
+      <if test="selectName != null">
+        select_name,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="typeId != null">
@@ -111,6 +115,9 @@
       </if>
       <if test="selectId != null">
         #{selectId,jdbcType=VARCHAR},
+      </if>
+      <if test="selectName != null">
+        #{selectName,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -132,6 +139,9 @@
       <if test="record.selectId != null">
         select_id = #{record.selectId,jdbcType=VARCHAR},
       </if>
+      <if test="record.selectName != null">
+        select_name = #{record.selectName,jdbcType=VARCHAR},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -141,7 +151,8 @@
     update sys_breed_type
     set type_id = #{record.typeId,jdbcType=VARCHAR},
       type_name = #{record.typeName,jdbcType=VARCHAR},
-      select_id = #{record.selectId,jdbcType=VARCHAR}
+      select_id = #{record.selectId,jdbcType=VARCHAR},
+      select_name = #{record.selectName,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -155,16 +166,19 @@
       <if test="selectId != null">
         select_id = #{selectId,jdbcType=VARCHAR},
       </if>
+      <if test="selectName != null">
+        select_name = #{selectName,jdbcType=VARCHAR},
+      </if>
     </set>
     where type_id = #{typeId,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.qm.backend.pojo.SysBreedType">
     update sys_breed_type
     set type_name = #{typeName,jdbcType=VARCHAR},
-      select_id = #{selectId,jdbcType=VARCHAR}
+      select_id = #{selectId,jdbcType=VARCHAR},
+      select_name = #{selectName,jdbcType=VARCHAR}
     where type_id = #{typeId,jdbcType=VARCHAR}
   </update>
-
 
 
 
@@ -199,7 +213,9 @@
     <if test="orderByClause != null">
       order by ${orderByClause}
     </if>
-    LIMIT #{pageNum},#{pageSize}
+    <if test="pageNum != null and pageSize != null">
+      LIMIT #{pageNum},#{pageSize}
+    </if>
   </select>
 
 </mapper>

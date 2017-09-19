@@ -2,6 +2,7 @@ package com.qm.backend.controller;
 
 import com.qm.backend.constant.KeyConstant;
 import com.qm.backend.constant.RequestConstant;
+import com.qm.backend.pojo.SysBreedType;
 import com.qm.backend.pojo.SysBreedTypeSelect;
 import com.qm.backend.service.SysBreedTypeSelectService;
 import com.qm.backend.vo.PageVO;
@@ -81,16 +82,17 @@ public class SysBreedTypeSelectController
      * 获取养殖类目选项列表
      *
      * @param request 当前用户信息
+     * @param select  类目信息
      * @param pageVO  分页参数
      * @return 养殖类目选项列表
      */
     @RequestMapping(value = PREFIX + "list", method = POST, produces = {RequestConstant.CONTENT_TYPE})
     @ResponseBody
-    public String list(HttpServletRequest request, PageVO pageVO)
+    public String list(HttpServletRequest request, SysBreedTypeSelect select, PageVO pageVO)
     {
         SessionVO sessionVO = (SessionVO) request.getAttribute(KeyConstant.LOGIN_INFO);
 
-        return service.list(sessionVO, pageVO);
+        return service.list(sessionVO, select, pageVO);
     }
 
     /**

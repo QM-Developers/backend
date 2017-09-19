@@ -9,6 +9,8 @@ public class SysBreedTypeInfo {
 
     private String selectId;
 
+    private String selectName;
+
     public String getInfoId() {
         return infoId;
     }
@@ -39,5 +41,13 @@ public class SysBreedTypeInfo {
 
     public void setSelectId(String selectId) {
         this.selectId = selectId == null ? null : selectId.trim();
+    }
+
+    public String getSelectName() {
+        return selectName;
+    }
+
+    public void setSelectName(String selectName) {
+        this.selectName = selectName == null ? null : selectName.trim();
     }
 }

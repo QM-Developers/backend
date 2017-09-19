@@ -9,6 +9,7 @@ import com.qm.backend.pojo.SysBreedTypeExample;
 import com.qm.backend.util.IDGeneratorUtil;
 import com.qm.backend.util.PagingUtil;
 import com.qm.backend.util.ParameterUtil;
+import com.qm.backend.util.StringUtil;
 import com.qm.backend.vo.PageVO;
 import com.qm.backend.vo.ResultVO;
 import com.qm.backend.vo.SessionVO;
@@ -62,12 +63,15 @@ public class SysBreedTypeServiceImpl implements SysBreedTypeService
     }
 
     @Override
-    public String list(SessionVO sessionVO, PageVO pageVO)
+    public String list(SessionVO sessionVO, SysBreedType type, PageVO pageVO)
     {
         if (ParameterUtil.objectIsNull(pageVO))
             return JSONObject.toJSONString(new ResultVO((int) RequestConstant.FAILED_102, sessionVO.getToken()));
 
         SysBreedTypeExample example = new SysBreedTypeExample();
+        SysBreedTypeExample.Criteria criteria = example.createCriteria();
+
+        criteria.andSelectIdEqualTo(type.getSelectId());
         example.setPageNum(PagingUtil.getStart(pageVO.getPageNum(), pageVO.getPageSize()));
         example.setPageSize(pageVO.getPageSize());
 

@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SysBreedTypeInfoExample {
-    private int pageNum;
+    private Integer pageNum;
 
-    private int pageSize;
+    private Integer pageSize;
 
     protected String orderByClause;
 
@@ -387,6 +387,76 @@ public class SysBreedTypeInfoExample {
             addCriterion("select_id not between", value1, value2, "selectId");
             return (Criteria) this;
         }
+
+        public Criteria andSelectNameIsNull() {
+            addCriterion("select_name is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSelectNameIsNotNull() {
+            addCriterion("select_name is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSelectNameEqualTo(String value) {
+            addCriterion("select_name =", value, "selectName");
+            return (Criteria) this;
+        }
+
+        public Criteria andSelectNameNotEqualTo(String value) {
+            addCriterion("select_name <>", value, "selectName");
+            return (Criteria) this;
+        }
+
+        public Criteria andSelectNameGreaterThan(String value) {
+            addCriterion("select_name >", value, "selectName");
+            return (Criteria) this;
+        }
+
+        public Criteria andSelectNameGreaterThanOrEqualTo(String value) {
+            addCriterion("select_name >=", value, "selectName");
+            return (Criteria) this;
+        }
+
+        public Criteria andSelectNameLessThan(String value) {
+            addCriterion("select_name <", value, "selectName");
+            return (Criteria) this;
+        }
+
+        public Criteria andSelectNameLessThanOrEqualTo(String value) {
+            addCriterion("select_name <=", value, "selectName");
+            return (Criteria) this;
+        }
+
+        public Criteria andSelectNameLike(String value) {
+            addCriterion("select_name like", value, "selectName");
+            return (Criteria) this;
+        }
+
+        public Criteria andSelectNameNotLike(String value) {
+            addCriterion("select_name not like", value, "selectName");
+            return (Criteria) this;
+        }
+
+        public Criteria andSelectNameIn(List<String> values) {
+            addCriterion("select_name in", values, "selectName");
+            return (Criteria) this;
+        }
+
+        public Criteria andSelectNameNotIn(List<String> values) {
+            addCriterion("select_name not in", values, "selectName");
+            return (Criteria) this;
+        }
+
+        public Criteria andSelectNameBetween(String value1, String value2) {
+            addCriterion("select_name between", value1, value2, "selectName");
+            return (Criteria) this;
+        }
+
+        public Criteria andSelectNameNotBetween(String value1, String value2) {
+            addCriterion("select_name not between", value1, value2, "selectName");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {
@@ -482,22 +552,23 @@ public class SysBreedTypeInfoExample {
         }
     }
 
-    public int getPageNum()
+
+    public Integer getPageNum()
     {
         return pageNum;
     }
 
-    public void setPageNum(int pageNum)
+    public void setPageNum(Integer pageNum)
     {
         this.pageNum = pageNum;
     }
 
-    public int getPageSize()
+    public Integer getPageSize()
     {
         return pageSize;
     }
 
-    public void setPageSize(int pageSize)
+    public void setPageSize(Integer pageSize)
     {
         this.pageSize = pageSize;
     }

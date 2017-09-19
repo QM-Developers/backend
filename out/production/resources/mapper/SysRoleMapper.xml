@@ -183,7 +183,12 @@
 
 
 
-
+  <resultMap id="SysPermission" type="com.qm.backend.pojo.SysPermission">
+    <id column="permission_id" jdbcType="VARCHAR" property="permissionId" />
+    <result column="permission_name" jdbcType="VARCHAR" property="permissionName" />
+    <result column="permission_url" jdbcType="VARCHAR" property="permissionUrl" />
+    <result column="permission_text" jdbcType="VARCHAR" property="permissionText" />
+  </resultMap>
 
   <select id="selectByExample" parameterType="com.qm.backend.pojo.SysRoleExample" resultMap="BaseResultMap">
     select
@@ -201,5 +206,11 @@
     LIMIT #{pageNum},#{pageSize}
   </select>
 
-
+  <select id="listPermission" resultMap="SysPermission">
+    SELECT sp.permission_id,sp.permission_name
+    FROM sys_permission sp
+    INNER JOIN sys_role_permission_re srpr
+    ON srpr.permission_id = sp.permission_id
+    WHERE srpr.role_id = #{roleId}
+  </select>
 </mapper>

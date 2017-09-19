@@ -1,5 +1,6 @@
 package com.qm.backend.mapper;
 
+import com.qm.backend.pojo.SysRole;
 import com.qm.backend.pojo.SysUser;
 import com.qm.backend.pojo.SysUserExample;
 import java.util.List;
@@ -29,4 +30,6 @@ public interface SysUserMapper {
     int updateByPrimaryKeySelective(SysUser record);
 
     int updateByPrimaryKey(SysUser record);
+
+    List<SysRole> listRole(@Param("userId") String userId);
 }

@@ -1,5 +1,7 @@
 package com.qm.backend.pojo;
 
+import java.util.List;
+
 public class SysUser {
     private String userId;
 
@@ -14,6 +16,8 @@ public class SysUser {
     private String memberId;
 
     private String role;
+
+    private List<SysRole> roleList;
 
     public String getUserId() {
         return userId;
@@ -73,5 +77,15 @@ public class SysUser {
     public void setRole(String role)
     {
         this.role = role;
+    }
+
+    public List<SysRole> getRoleList()
+    {
+        return roleList;
+    }
+
+    public void setRoleList(List<SysRole> roleList)
+    {
+        this.roleList = roleList;
     }
 }

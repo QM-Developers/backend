@@ -12,8 +12,8 @@ public class SysBreedTypeSelectTest
     public static void main(String[] args)
     {
         Client client = ClientBuilder.newClient();
-        String result = save(client);
-//        String result = list(client);
+//        String result = save(client);
+        String result = list(client);
 
         System.out.println(result);
     }
@@ -42,6 +42,7 @@ public class SysBreedTypeSelectTest
 
         form.param("userId", "5198012fab4d45be806393acaded43ae");
         form.param("token", "1");
+        form.param("typeId", "65053460a17a450f91b8c26b3ae3e751");
         form.param("pageNum", "1");
         form.param("pageSize", "10");
 

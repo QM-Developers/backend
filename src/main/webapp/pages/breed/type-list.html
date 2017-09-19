@@ -1,0 +1,77 @@
+<div class="admin-content-body">
+    <div class="am-cf am-padding am-padding-bottom-0">
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">养殖类目</strong> /
+            <small>Type</small>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="am-g">
+        <div class="am-u-sm-12 am-u-md-6">
+            <div class="am-btn-toolbar">
+                <div class="am-btn-group am-btn-group-xs">
+                    <button onclick="list.toSave();" type="button" class="am-btn am-btn-default"><span class="am-icon-plus"></span> 新增</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="am-g">
+        <div class="am-u-sm-12">
+            <div class="am-form">
+                <table class="am-table am-table-striped am-table-hover table-main">
+                    <thead>
+                    <tr>
+                        <th class="table-id">序号</th>
+                        <th class="table-title">类目</th>
+                        <th class="table-type">归属选项</th>
+                        <th class="table-type">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody id="type-list">
+                    <tr>
+                        <td>1</td>
+                        <td><a href="#">Business management</a></td>
+                        <td>default</td>
+                        <td>
+                            <div class="am-btn-toolbar">
+                                <div class="am-btn-group am-btn-group-xs">
+                                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary">
+                                        <span class="am-icon-pencil-square-o"></span> 编辑
+                                    </button>
+                                    <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only">
+                                        <span class="am-icon-trash-o"></span> 删除
+                                    </button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="am-cf">
+                    <div class="am-fr">
+                        <ul class="am-pagination" id="page-count">
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="admin-content-footer">
+    <hr>
+    <p class="am-padding-left">© 2014 AllMobilize, Inc. Licensed under MIT license.</p>
+</footer>
+
+<script type="text/javascript" src="../../script/js/Constant.js"></script>
+<script type="text/javascript" src="../../script/js/myjs.js"></script>
+<script type="text/javascript" src="../breed/type-list.js"></script>
+<script type="text/javascript">
+    list.init();
+</script>

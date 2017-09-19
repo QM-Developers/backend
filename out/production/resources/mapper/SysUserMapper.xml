@@ -70,7 +70,7 @@
     user_id, user_name, user_password, user_phone, token
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select 
+    select
     <include refid="Base_Column_List" />
     from sys_user
     where user_id = #{userId,jdbcType=VARCHAR}
@@ -207,14 +207,11 @@
 
 
 
-
-
-
-
-
-
-
-
+  <resultMap id="SysRole" type="com.qm.backend.pojo.SysRole">
+    <id column="role_id" jdbcType="VARCHAR" property="roleId" />
+    <result column="role_name" jdbcType="VARCHAR" property="roleName" />
+    <result column="role_text" jdbcType="VARCHAR" property="roleText" />
+  </resultMap>
 
   <select id="selectByExample" parameterType="com.qm.backend.pojo.SysUserExample" resultMap="BaseResultMap">
     select
@@ -222,7 +219,7 @@
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from sys_user
+    from sys_user su
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -232,6 +229,14 @@
     <if test="pageNum != null and pageSize != null">
       LIMIT #{pageNum},#{pageSize}
     </if>
+  </select>
+
+  <select id="listRole" resultMap="SysRole">
+    SELECT sr.role_id,sr.role_name
+    FROM sys_role sr
+    INNER JOIN sys_user_role_re surr
+    ON surr.role_id = sr.role_id
+    WHERE surr.user_id = #{userId}
   </select>
 
 </mapper>

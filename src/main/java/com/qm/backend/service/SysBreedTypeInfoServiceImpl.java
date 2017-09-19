@@ -9,6 +9,7 @@ import com.qm.backend.pojo.SysBreedTypeInfoExample;
 import com.qm.backend.util.IDGeneratorUtil;
 import com.qm.backend.util.PagingUtil;
 import com.qm.backend.util.ParameterUtil;
+import com.qm.backend.util.StringUtil;
 import com.qm.backend.vo.PageVO;
 import com.qm.backend.vo.ResultVO;
 import com.qm.backend.vo.SessionVO;
@@ -59,9 +60,12 @@ public class SysBreedTypeInfoServiceImpl implements SysBreedTypeInfoService
     }
 
     @Override
-    public String list(SessionVO sessionVO, PageVO pageVO)
+    public String list(SessionVO sessionVO, SysBreedTypeInfo info, PageVO pageVO)
     {
         SysBreedTypeInfoExample example = new SysBreedTypeInfoExample();
+        SysBreedTypeInfoExample.Criteria criteria = example.createCriteria();
+
+        criteria.andSelectIdEqualTo(info.getSelectId());
         example.setPageNum(PagingUtil.getStart(pageVO.getPageNum(), pageVO.getPageSize()));
         example.setPageSize(pageVO.getPageSize());
 

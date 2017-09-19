@@ -5,6 +5,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.qm.backend.constant.Constant;
 import com.qm.backend.constant.KeyConstant;
 import com.qm.backend.constant.RequestConstant;
+import com.qm.backend.constant.StringConstant;
 import com.qm.backend.mapper.SysRoleMapper;
 import com.qm.backend.mapper.SysRolePermissionReMapper;
 import com.qm.backend.pojo.SysRole;
@@ -39,6 +40,7 @@ public class SysRoleServiceImpl implements SysRoleService
     public String save(SessionVO sessionVO, SysRole role)
     {
         role.setRoleId(IDGeneratorUtil.generator());
+        role.setPermission(role.getPermission() == null ? StringConstant.EMPTY : role.getPermission());
 
         if (ParameterUtil.objectIsNull(role))
             return JSONObject.toJSONString(new ResultVO((int) RequestConstant.FAILED, sessionVO.getToken()));
@@ -82,6 +84,9 @@ public class SysRoleServiceImpl implements SysRoleService
         int pageCount = PagingUtil.getCount((int) mapper.countByExample(example), pageVO.getPageSize());
         List<SysRole> result = mapper.selectByExample(example);
 
+        for (SysRole role : result)
+            role.setPermissionList(mapper.listPermission(role.getRoleId()));
+
         JSONObject json = (JSONObject) JSONObject.toJSON(new ResultVO((int) RequestConstant.SUCCEED, sessionVO.getToken(), result));
         json.put(KeyConstant.PAGE_COUNT, pageCount);
 
@@ -111,12 +116,12 @@ public class SysRoleServiceImpl implements SysRoleService
 
         for (Object obj : jArr)
         {
-            permissionRe = JSONObject.parseObject(obj.toString(),SysRolePermissionRe.class);
+            permissionRe = JSONObject.parseObject(obj.toString(), SysRolePermissionRe.class);
             permissionRe.setRoleId(role.getRoleId());
             if (permissionReMapper.insert(permissionRe) < 1)
                 throw new RuntimeException(Constant.SAVE_FAILED);
         }
 
-        return JSONObject.toJSONString(new ResultVO((int) RequestConstant.SUCCEED,sessionVO.getToken()));
+        return JSONObject.toJSONString(new ResultVO((int) RequestConstant.SUCCEED, sessionVO.getToken()));
     }
 }

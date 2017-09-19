@@ -16,5 +16,5 @@ public interface SysRoleService
 
     String get(SessionVO sessionVO, SysRole role);
 
-    String updatePermission(SessionVO sessionVO, SysRole role);
+    String updatePermission(SessionVO sessionVO, SysRole role);;
 }

@@ -1,22 +1,11 @@
 {
-  "result": [
-    {
-      "selectId": "2445092751d04d78b3facaea5d8044a6",
-      "typeId": "335c5c7dd59344acba81d6bbd0ca1506",
-      "selectName": "猪"
-    },
-    {
-      "selectId": "3a2d8ff53ebc403a923f9dcbb22f9d02",
-      "typeId": "335c5c7dd59344acba81d6bbd0ca1506",
-      "selectName": "鱼"
-    },
-    {
-      "selectId": "ff07eef884bf4291a1477dc6f3d20301",
-      "typeId": "335c5c7dd59344acba81d6bbd0ca1506",
-      "selectName": "虾"
-    }
-  ],
-  "pageCount": 1,
-  "state": 100,
-  "token": "1"
+  "类目1":"选项A",
+  "类目2":"选项B",
+  "类目3":"选项C",
+  "信息1":"内容A",
+  "信息2":"内容B",
+  "信息3":"内容C",
+  "信息4":"内容D",
+  "信息5":"内容E",
+  "信息6":"内容F"
 }

@@ -1,5 +1,7 @@
 package com.qm.backend.pojo;
 
+import java.util.List;
+
 public class SysRole {
     private String roleId;
 
@@ -8,6 +10,10 @@ public class SysRole {
     private String roleText;
 
     private String permission;
+
+    private String memberId;
+
+    private List<SysPermission> permissionList;
 
     public String getRoleId() {
         return roleId;
@@ -41,5 +47,25 @@ public class SysRole {
     public void setPermission(String permission)
     {
         this.permission = permission;
+    }
+
+    public String getMemberId()
+    {
+        return memberId;
+    }
+
+    public void setMemberId(String memberId)
+    {
+        this.memberId = memberId;
+    }
+
+    public List<SysPermission> getPermissionList()
+    {
+        return permissionList;
+    }
+
+    public void setPermissionList(List<SysPermission> permissionList)
+    {
+        this.permissionList = permissionList;
     }
 }

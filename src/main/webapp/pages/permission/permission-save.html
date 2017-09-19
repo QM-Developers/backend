@@ -1,0 +1,54 @@
+<div class="admin-content-body">
+    <div class="am-cf am-padding am-padding-bottom-0">
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">权限资料</strong> /
+            <small>Permission information</small>
+        </div>
+    </div>
+
+    <hr/>
+
+    <div class="am-g">
+        <div class="am-u-sm-12 am-u-md-8">
+            <form class="am-form am-form-horizontal">
+                <div class="am-form-group">
+                    <label class="am-u-sm-3 am-form-label">权限名称 / Permission name</label>
+                    <div class="am-u-sm-9">
+                        <input type="text" id="permission-name" placeholder="权限名称 / Permission name">
+                    </div>
+                </div>
+
+                <div class="am-form-group">
+                    <label class="am-u-sm-3 am-form-label">权限说明 / Permission text</label>
+                    <div class="am-u-sm-9">
+                        <input type="text" id="permission-text" placeholder="权限说明 / Permission text">
+                    </div>
+                </div>
+
+                <div class="am-form-group">
+                    <label class="am-u-sm-3 am-form-label">操作地址 / Operation url</label>
+                    <div class="am-u-sm-9">
+                        <input type="text" id="permission-url" placeholder="操作地址 / Operation url">
+                    </div>
+                </div>
+
+                <div class="am-form-group">
+                    <div class="am-u-sm-9 am-u-sm-push-3">
+                        <button onclick="save.save();" type="button" class="am-btn am-btn-primary">保存</button>
+                        <button onclick="save.back();" type="button" class="am-btn am-btn-default">返回</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<footer class="admin-content-footer">
+    <hr>
+    <p class="am-padding-left">© 2014 AllMobilize, Inc. Licensed under MIT license.</p>
+</footer>
+
+<script type="text/javascript" src="../../script/md5/md5.min.js"></script>
+<script type="text/javascript" src="../permission/permission-save.js"></script>
+<script type="text/javascript">
+    save.init();
+</script>

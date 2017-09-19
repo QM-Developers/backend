@@ -12,7 +12,7 @@ public interface SysBreedTypeService
 
     String update(SessionVO sessionVO, SysBreedType breedType);
 
-    String list(SessionVO sessionVO, PageVO pageVO);
+    String list(SessionVO sessionVO, SysBreedType type, PageVO pageVO);
 
     String get(SessionVO sessionVO, SysBreedType breedType);
 }

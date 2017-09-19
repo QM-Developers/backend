@@ -37,7 +37,7 @@ public class SysBreedTypeSelectServiceImpl implements SysBreedTypeSelectService
         int result = mapper.insert(select);
         result = result < 1 ? RequestConstant.FAILED : RequestConstant.SUCCEED;
 
-        return JSONObject.toJSONString(new ResultVO(result, sessionVO.getToken(),select.getSelectId()));
+        return JSONObject.toJSONString(new ResultVO(result, sessionVO.getToken(), select.getSelectId()));
     }
 
     @Override
@@ -59,14 +59,17 @@ public class SysBreedTypeSelectServiceImpl implements SysBreedTypeSelectService
     }
 
     @Override
-    public String list(SessionVO sessionVO, PageVO pageVO)
+    public String list(SessionVO sessionVO, SysBreedTypeSelect select, PageVO pageVO)
     {
         if (ParameterUtil.objectIsNull(pageVO))
             return JSONObject.toJSONString(new ResultVO((int) RequestConstant.FAILED_102, sessionVO.getToken()));
 
         SysBreedTypeSelectExample example = new SysBreedTypeSelectExample();
+        SysBreedTypeSelectExample.Criteria criteria = example.createCriteria();
+
         example.setPageNum(PagingUtil.getStart(pageVO.getPageNum(), pageVO.getPageSize()));
         example.setPageSize(pageVO.getPageSize());
+        criteria.andTypeIdEqualTo(select.getTypeId());
 
         int pageCount = PagingUtil.getCount((int) mapper.countByExample(example), pageVO.getPageSize());
         List<SysBreedTypeSelect> result = mapper.selectByExample(example);
@@ -80,6 +83,10 @@ public class SysBreedTypeSelectServiceImpl implements SysBreedTypeSelectService
     @Override
     public String get(SessionVO sessionVO, SysBreedTypeSelect select)
     {
-        return null;
+        SysBreedTypeSelect result = mapper.selectByPrimaryKey(select.getSelectId());
+
+        int flag = result == null ? RequestConstant.FAILED : RequestConstant.SUCCEED;
+
+        return JSONObject.toJSONString(new ResultVO(flag, sessionVO.getToken(), result));
     }
 }
