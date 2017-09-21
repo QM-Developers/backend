@@ -71,6 +71,8 @@ public class SysPermissionServiceImpl implements SysPermissionService
             return JSONObject.toJSONString(new ResultVO((int) RequestConstant.FAILED_102, sessionVO.getToken()));
 
         SysPermissionExample example = new SysPermissionExample();
+
+        example.setOrderByClause("permission_url");
         example.setPageNum(PagingUtil.getStart(pageVO.getPageNum(), pageVO.getPageSize()));
         example.setPageSize(pageVO.getPageSize());
 

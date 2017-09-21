@@ -31,6 +31,11 @@ var list = {
 
         myjs.ajax_post(url, params, function (data)
         {
+            if (data.state === Constant.permission_denied)
+            {
+                alert("权限不足");
+                return;
+            }
             if (data.state !== Constant.succeed)
                 return;
             var pageCount = data["pageCount"];
@@ -94,6 +99,9 @@ var list = {
 
         myjs.ajax_post(url, params, function (data)
         {
+            if (data.state === Constant.permission_denied)
+                return;
+
             if (data.state !== Constant.succeed)
                 return;
             var pageCount = data["pageCount"];
@@ -138,6 +146,11 @@ var list = {
 
         myjs.ajax_post(url, params, function (data)
         {
+            if (data.state === Constant.permission_denied)
+            {
+                alert("权限不足");
+                return;
+            }
             if (data.state === Constant.succeed)
                 $(item).parents("tr").remove();
         });
@@ -193,6 +206,11 @@ var list = {
 
         myjs.ajax_post(url, params, function (data)
         {
+            if (data.state === Constant.permission_denied)
+            {
+                alert("权限不足");
+                return;
+            }
             if (data.state === Constant.succeed)
             {
                 list.modelRole.modal("close");

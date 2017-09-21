@@ -8,5 +8,7 @@ public class RequestConstant
 
     public static final byte FAILED_102 = 102;  // 操作失败
 
+    public static final byte PERMISSION_DENIED = 127;   // 没有权限
+
     public static final String CONTENT_TYPE = "application/json;charset=UTF-8";
 }

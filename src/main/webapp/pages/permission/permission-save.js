@@ -10,8 +10,6 @@ var save = {
     {
         save.permissionId = $("#hidden-permission-id").val();
 
-        console.log(save.permissionId);
-
         if (myjs.isNull(save.permissionId))
             return;
 
@@ -22,6 +20,11 @@ var save = {
 
         myjs.ajax_post(url,params,function (data)
         {
+            if (data.state === Constant.permission_denied)
+            {
+                alert("权限不足");
+                return;
+            }
             if (data.state === Constant.succeed)
             {
                 data = data.result;
@@ -49,6 +52,11 @@ var save = {
 
         myjs.ajax_post(url, params, function (data)
         {
+            if (data.state === Constant.permission_denied)
+            {
+                alert("权限不足");
+                return;
+            }
             if (data.state === Constant.succeed)
                 save.back();
             else

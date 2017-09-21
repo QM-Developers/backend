@@ -1,0 +1,114 @@
+<div class="admin-content-body">
+    <div class="am-cf am-padding am-padding-bottom-0">
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">客户信息</strong> /
+            <small>Customer information</small>
+        </div>
+    </div>
+
+    <hr/>
+
+    <div class="am-g">
+        <div class="am-u-sm-12 am-u-md-8">
+            <div class="am-form am-form-horizontal">
+
+                <div class="am-form-group">
+                    <label class="am-u-sm-3 am-form-label">客户姓名</label>
+                    <div class="am-u-sm-9">
+                        <input type="text" id="customer-name" placeholder="客户姓名">
+                    </div>
+                </div>
+
+                <div class="am-form-group">
+                    <label class="am-u-sm-3 am-form-label">客户性别</label>
+                    <div class="am-u-sm-9">
+                        <select id="customer-sex">
+                            <option value="男">男</option>
+                            <option value="女">女</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="am-form-group">
+                    <label class="am-u-sm-3 am-form-label">手机号</label>
+                    <div class="am-u-sm-9">
+                        <input type="number" id="customer-phone" placeholder="手机号">
+                    </div>
+                </div>
+
+                <div class="am-form-group">
+                    <label class="am-u-sm-3 am-form-label">身份证号</label>
+                    <div class="am-u-sm-9">
+                        <input type="text" id="customer-identity" placeholder="身份证号">
+                    </div>
+                </div>
+
+                <div class="am-form-group">
+                    <label class="am-u-sm-3 am-form-label">企业码</label>
+                    <div class="am-u-sm-9">
+                        <input type="text" id="team-id" placeholder="企业码">
+                    </div>
+                </div>
+
+                <div class="am-form-group">
+                    <label class="am-u-sm-3 am-form-label">公司名称</label>
+                    <div class="am-u-sm-9">
+                        <input type="text" id="team-name" placeholder="公司名称">
+                    </div>
+                </div>
+                <div class="am-form-group">
+                    <label class="am-u-sm-3 am-form-label">创建时间</label>
+                    <div class="am-u-sm-9" >
+                        <input type="text" id="team-create-date" placeholder="创建时间" readonly>
+                    </div>
+                </div>
+
+                <div class="am-form-group">
+                    <label class="am-u-sm-3 am-form-label">公司地址</label>
+                    <div class="am-u-sm-9">
+                        <input type="text" id="team-area" placeholder="公司地址">
+                    </div>
+                </div>
+
+                <div class="am-form-group">
+                    <label class="am-u-sm-3 am-form-label">发货地址</label>
+                    <div class="am-u-sm-9">
+                        <input type="text" id="team-address" placeholder="发货地址">
+                        <div class="am-u-sm-8" style="height: 200px" id="container"></div>
+                        <input class="am-u-sm-4">
+                        <div class="am-u-sm-offset-8" style="background: red"></div>
+                    </div>
+                </div>
+
+                <div class="am-form-group">
+                    <div class="am-u-sm-9 am-u-sm-push-3">
+                        <button onclick="save.save();" type="button" class="am-btn am-btn-primary">保存</button>
+                        <button onclick="save.back();" type="button" class="am-btn am-btn-default">返回</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="admin-content-footer">
+    <hr>
+    <p class="am-padding-left">© 2014 AllMobilize, Inc. Licensed under MIT license.</p>
+</footer>
+
+<script type="text/javascript" src="../../assets/js/amazeui.min.js"></script>
+<script type="text/javascript" src="../../script/md5/md5.min.js"></script>
+<script type="text/javascript" src="../../script/js/date.js"></script>
+<script type="text/javascript" src="../customer/customer-save.js"></script>
+<script type="text/javascript" src="../../script/js/dragMap.js"></script>
+<script type="text/javascript">
+    save.init();
+    var success = function (rep)
+    {
+        console.log(rep);
+    };
+    var fail = function (rep)
+    {
+        console.log(rep);
+    };
+    dragMap.init("container", "keyword", success, fail);
+</script>

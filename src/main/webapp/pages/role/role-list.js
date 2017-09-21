@@ -1,7 +1,7 @@
 var list = {
     pageSize: 10,
     permissionList: $("#permission-list"),
-    modelPermission: $("#modal-permission"),
+    modalPermission: $("#modal-permission"),
     roleId: null,
     checkSelectAll: $("#check-select-all"),
 
@@ -32,6 +32,11 @@ var list = {
 
         myjs.ajax_post(url, params, function (data)
         {
+            if (data.state === Constant.permission_denied)
+            {
+                alert("权限不足");
+                return;
+            }
             if (data.state !== Constant.succeed)
                 return;
             var pageCount = data["pageCount"];
@@ -87,9 +92,13 @@ var list = {
 
         myjs.ajax_post(url, params, function (data)
         {
+            if (data.state === Constant.permission_denied)
+                return;
+
             if (data.state === Constant.succeed)
             {
                 var pageCount = data["pageCount"];
+                console.log(pageCount);
                 var item = "";
                 data = data.result;
 
@@ -103,7 +112,7 @@ var list = {
                 }
 
                 $("#permission-list").append(item);
-                if (pageSize < pageCount)
+                if (pageNum < pageCount)
                     list.listPermission(pageNum + 1, pageSize);
             }
         });
@@ -133,6 +142,11 @@ var list = {
 
         myjs.ajax_post(url, params, function (data)
         {
+            if (data.state === Constant.permission_denied)
+            {
+                alert("权限不足");
+                return;
+            }
             if (data.state === Constant.succeed)
                 $(item).parents("tr").remove();
         });
@@ -152,7 +166,7 @@ var list = {
                     check[i].checked = true;
 
         list.roleId = rid;
-        list.modelPermission.modal({'closeOnConfirm': false, 'closeViaDimmer': false});
+        list.modalPermission.modal({'closeOnConfirm': false, 'closeViaDimmer': false, 'height': 500});
     },
 
     selectAll: function ()
@@ -177,10 +191,15 @@ var list = {
 
         myjs.ajax_post(url, params, function (data)
         {
+            if (data.state === Constant.permission_denied)
+            {
+                alert("权限不足");
+                return;
+            }
             if (data.state === Constant.succeed) ;
             {
                 list.listRole(1, list.pageSize);
-                list.modelPermission.modal("close");
+                list.modalPermission.modal("close");
             }
         });
     }

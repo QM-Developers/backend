@@ -74,11 +74,13 @@ public class SysCustomerServiceImpl implements SysCustomerService
             return JSONObject.toJSONString(new ResultVO((int) RequestConstant.FAILED_102, sessionVO.getToken()));
 
         SysCustomerExample example = new SysCustomerExample();
+        SysCustomerExample.Criteria criteria = example.createCriteria();
 
+        criteria.andUserIdEqualTo(sessionVO.getUserId());
         example.setPageNum(PagingUtil.getStart(pageVO.getPageNum(), pageVO.getPageSize()));
         example.setPageSize(pageVO.getPageSize());
 
-        int pageCount = (int) mapper.countByExample(example);
+        int pageCount = PagingUtil.getCount((int) mapper.countByExample(example), pageVO.getPageSize());
         List<SysCustomer> result = mapper.selectByExample(example);
 
         JSONObject json = (JSONObject) JSONObject.toJSON(new ResultVO((int) RequestConstant.SUCCEED, sessionVO.getToken(), result));

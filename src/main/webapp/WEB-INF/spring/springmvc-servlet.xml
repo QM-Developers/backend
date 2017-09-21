@@ -16,6 +16,11 @@
             <mvc:exclude-mapping path="/login/*"/>
             <bean class="com.qm.backend.interceptor.TokenInterceptor"/>
         </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <mvc:exclude-mapping path="/login/*"/>
+            <bean class="com.qm.backend.interceptor.PermissionInterceptor"/>
+        </mvc:interceptor>
 
     </mvc:interceptors>
 

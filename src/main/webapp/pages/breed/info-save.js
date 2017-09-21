@@ -22,6 +22,8 @@ var save = {
 
         myjs.ajax_post(url, params, function (data)
         {
+            if (data.state === Constant.permission_denied)
+                alert("权限不足");
             if (data.state === Constant.succeed)
             {
                 data = data.result;
@@ -49,6 +51,8 @@ var save = {
 
         myjs.ajax_post(url, params, function (data)
         {
+            if (data.state === Constant.permission_denied)
+                alert("权限不足");
             if (data.state === Constant.succeed)
                 save.back();
         });

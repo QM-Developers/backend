@@ -1,4 +1,6 @@
 var index = {
+    modalPassword: $("#modal-password"),
+
     init: function ()
     {
 
@@ -29,22 +31,22 @@ var index = {
         index.load('../role/role-save.html');
     },
 
-    loadPermissionSave:function ()
+    loadPermissionSave: function ()
     {
         index.load('../permission/permission-save.html');
     },
 
-    loadPermissionList:function ()
+    loadPermissionList: function ()
     {
         index.load('../permission/permission-list.html');
     },
 
-    loadTypeList:function ()
+    loadTypeList: function ()
     {
         index.load('../breed/type-list.html');
     },
 
-    loadTypeList2:function ()
+    loadTypeList2: function ()
     {
         $("#hidden-type-id").val("");
         $("#hidden-type-name").val("");
@@ -53,28 +55,81 @@ var index = {
         index.loadTypeList();
     },
 
-    loadTypeSave:function ()
+    loadTypeSave: function ()
     {
         index.load('../breed/type-save.html');
     },
 
-    loadSelectList:function ()
+    loadSelectList: function ()
     {
         index.load('../breed/select-list.html');
     },
 
-    loadSelectSave:function ()
+    loadSelectSave: function ()
     {
         index.load('../breed/select-save.html');
     },
 
-    loadInfoList:function ()
+    loadInfoList: function ()
     {
         index.load('../breed/info-list.html');
     },
 
-    loadInfoSave:function ()
+    loadInfoSave: function ()
     {
         index.load('../breed/info-save.html');
+    },
+
+    loadCustomerSave: function ()
+    {
+        index.load('../customer/customer-save.html');
+    },
+
+    loadCustomerList: function ()
+    {
+        index.load('../customer/customer-list.html');
+    },
+
+    loadApplyList: function ()
+    {
+        index.load('../customer/apply-list.html');
+    },
+
+    loadApproveList: function ()
+    {
+        index.load('../customer/approve-list.html');
+    },
+
+    showPasswordModal: function ()
+    {
+        index.modalPassword.modal({'closeOnConfirm': false, 'closeViaDimmer': false});
+    },
+
+    updatePassword:function ()
+    {
+        var p1 = $("#password1").val().trim();
+        var p2 = $("#password2").val().trim();
+
+        if (p1 !== p2)
+        {
+            alert("两次输入不一致");
+            return;
+        }
+
+        var url = Constant.getUrl("/password/update");
+        var params = {};
+
+        params["userPassword"] = md5(p1);
+
+        myjs.ajax_post(url,params,function (data)
+        {
+            if (data.state === Constant.permission_denied)
+                alert("权限不足");
+            if (data.state === Constant.succeed)
+            {
+                alert("修改成功");
+                index.modalPassword.modal("close");
+            }
+        });
     },
 };

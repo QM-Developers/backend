@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qm.backend.mapper.PermissionInterceptorMapper">
+
+    <select id="countPermission" resultType="java.lang.Integer">
+        select count(0)
+        from sys_user su
+        inner join sys_user_role_re surr
+        on surr.user_id = su.user_id
+        inner join sys_role_permission_re srpr
+        on srpr.role_id = surr.role_id
+        inner join sys_permission sp
+        on srpr.permission_id = sp.permission_id
+        where su.user_id = #{userId}
+        and sp.permission_url = #{url}
+    </select>
+
+</mapper>

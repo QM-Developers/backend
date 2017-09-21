@@ -1,5 +1,5 @@
 var save = {
-    roleId:"",
+    roleId: "",
 
     init: function ()
     {
@@ -20,8 +20,13 @@ var save = {
 
         params["roleId"] = save.roleId;
 
-        myjs.ajax_post(url,params,function (data)
+        myjs.ajax_post(url, params, function (data)
         {
+            if (data.state === Constant.permission_denied)
+            {
+                alert("权限不足");
+                return;
+            }
             if (data.state === Constant.succeed)
             {
                 data = data.result;
@@ -47,6 +52,11 @@ var save = {
 
         myjs.ajax_post(url, params, function (data)
         {
+            if (data.state === Constant.permission_denied)
+            {
+                alert("权限不足");
+                return;
+            }
             if (data.state === Constant.succeed)
                 save.back();
             else
@@ -54,7 +64,7 @@ var save = {
         });
     },
 
-    back:function ()
+    back: function ()
     {
         index.loadRoleList();
     },
