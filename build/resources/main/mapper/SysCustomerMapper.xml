@@ -20,6 +20,7 @@
     <result column="user_id" jdbcType="VARCHAR" property="userId" />
     <result column="had_account" jdbcType="TINYINT" property="hadAccount" />
     <result column="role_id" jdbcType="INTEGER" property="roleId" />
+    <result column="lat_lng" jdbcType="VARCHAR" property="latLng" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -82,7 +83,7 @@
   <sql id="Base_Column_List">
     customer_id, customer_sex, customer_name, customer_phone, customer_identity, team_id,
     team_name, team_create_date, team_area, team_address, department_id, department_name,
-    department_type, position_id, position_name, user_id, had_account, role_id
+    department_type, position_id, position_name, user_id, had_account, role_id, lat_lng
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select
@@ -106,15 +107,15 @@
     team_name, team_create_date, team_area,
     team_address, department_id, department_name,
     department_type, position_id, position_name,
-    user_id, had_account, role_id
-    )
+    user_id, had_account, role_id,
+    lat_lng)
     values (#{customerId,jdbcType=VARCHAR}, #{customerSex,jdbcType=VARCHAR}, #{customerName,jdbcType=VARCHAR},
     #{customerPhone,jdbcType=VARCHAR}, #{customerIdentity,jdbcType=VARCHAR}, #{teamId,jdbcType=VARCHAR},
     #{teamName,jdbcType=VARCHAR}, #{teamCreateDate,jdbcType=TIMESTAMP}, #{teamArea,jdbcType=VARCHAR},
     #{teamAddress,jdbcType=VARCHAR}, #{departmentId,jdbcType=VARCHAR}, #{departmentName,jdbcType=VARCHAR},
     #{departmentType,jdbcType=VARCHAR}, #{positionId,jdbcType=VARCHAR}, #{positionName,jdbcType=VARCHAR},
-    #{userId,jdbcType=VARCHAR}, #{hadAccount,jdbcType=TINYINT}, #{roleId,jdbcType=INTEGER}
-    )
+    #{userId,jdbcType=VARCHAR}, #{hadAccount,jdbcType=TINYINT}, #{roleId,jdbcType=INTEGER},
+    #{latLng,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.qm.backend.pojo.SysCustomer">
     insert into sys_customer
@@ -173,6 +174,9 @@
       <if test="roleId != null">
         role_id,
       </if>
+      <if test="latLng != null">
+        lat_lng,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="customerId != null">
@@ -228,6 +232,9 @@
       </if>
       <if test="roleId != null">
         #{roleId,jdbcType=INTEGER},
+      </if>
+      <if test="latLng != null">
+        #{latLng,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -294,6 +301,9 @@
       <if test="record.roleId != null">
         role_id = #{record.roleId,jdbcType=INTEGER},
       </if>
+      <if test="record.latLng != null">
+        lat_lng = #{record.latLng,jdbcType=VARCHAR},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -318,7 +328,8 @@
     position_name = #{record.positionName,jdbcType=VARCHAR},
     user_id = #{record.userId,jdbcType=VARCHAR},
     had_account = #{record.hadAccount,jdbcType=TINYINT},
-    role_id = #{record.roleId,jdbcType=INTEGER}
+    role_id = #{record.roleId,jdbcType=INTEGER},
+    lat_lng = #{record.latLng,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -377,30 +388,45 @@
       <if test="roleId != null">
         role_id = #{roleId,jdbcType=INTEGER},
       </if>
+      <if test="latLng != null">
+        lat_lng = #{latLng,jdbcType=VARCHAR},
+      </if>
     </set>
     where customer_id = #{customerId,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.qm.backend.pojo.SysCustomer">
     update sys_customer
     set customer_sex = #{customerSex,jdbcType=VARCHAR},
-    customer_name = #{customerName,jdbcType=VARCHAR},
-    customer_phone = #{customerPhone,jdbcType=VARCHAR},
-    customer_identity = #{customerIdentity,jdbcType=VARCHAR},
-    team_id = #{teamId,jdbcType=VARCHAR},
-    team_name = #{teamName,jdbcType=VARCHAR},
-    team_create_date = #{teamCreateDate,jdbcType=TIMESTAMP},
-    team_area = #{teamArea,jdbcType=VARCHAR},
-    team_address = #{teamAddress,jdbcType=VARCHAR},
-    department_id = #{departmentId,jdbcType=VARCHAR},
-    department_name = #{departmentName,jdbcType=VARCHAR},
-    department_type = #{departmentType,jdbcType=VARCHAR},
-    position_id = #{positionId,jdbcType=VARCHAR},
-    position_name = #{positionName,jdbcType=VARCHAR},
-    user_id = #{userId,jdbcType=VARCHAR},
-    had_account = #{hadAccount,jdbcType=TINYINT},
-    role_id = #{roleId,jdbcType=INTEGER}
+      customer_name = #{customerName,jdbcType=VARCHAR},
+      customer_phone = #{customerPhone,jdbcType=VARCHAR},
+      customer_identity = #{customerIdentity,jdbcType=VARCHAR},
+      team_id = #{teamId,jdbcType=VARCHAR},
+      team_name = #{teamName,jdbcType=VARCHAR},
+      team_create_date = #{teamCreateDate,jdbcType=TIMESTAMP},
+      team_area = #{teamArea,jdbcType=VARCHAR},
+      team_address = #{teamAddress,jdbcType=VARCHAR},
+      department_id = #{departmentId,jdbcType=VARCHAR},
+      department_name = #{departmentName,jdbcType=VARCHAR},
+      department_type = #{departmentType,jdbcType=VARCHAR},
+      position_id = #{positionId,jdbcType=VARCHAR},
+      position_name = #{positionName,jdbcType=VARCHAR},
+      user_id = #{userId,jdbcType=VARCHAR},
+      had_account = #{hadAccount,jdbcType=TINYINT},
+      role_id = #{roleId,jdbcType=INTEGER},
+      lat_lng = #{latLng,jdbcType=VARCHAR}
     where customer_id = #{customerId,jdbcType=VARCHAR}
   </update>
+
+
+
+
+
+
+
+
+
+
+
 
 
 

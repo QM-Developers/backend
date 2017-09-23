@@ -57,7 +57,7 @@
                 </div>
                 <div class="am-form-group">
                     <label class="am-u-sm-3 am-form-label">创建时间</label>
-                    <div class="am-u-sm-9" >
+                    <div class="am-u-sm-9">
                         <input type="text" id="team-create-date" placeholder="创建时间" readonly>
                     </div>
                 </div>
@@ -72,10 +72,14 @@
                 <div class="am-form-group">
                     <label class="am-u-sm-3 am-form-label">发货地址</label>
                     <div class="am-u-sm-9">
-                        <input type="text" id="team-address" placeholder="发货地址">
+                        <input readonly type="text" id="team-address" placeholder="发货地址">
+                        <hidden id="lat-lng"/>
                         <div class="am-u-sm-8" style="height: 200px" id="container"></div>
-                        <input class="am-u-sm-4">
-                        <div class="am-u-sm-offset-8" style="background: red"></div>
+                        <input id="keyword" class="am-u-sm-4">
+                        <div class="am-u-sm-offset-8 am-u-sm-4 am-btn-group-stacked" style="padding:0;margin-top: -173px;height: 177px;overflow: scroll;overflow-x: hidden">
+                            <ul id="poi-list" class="am-list am-list-border">
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
@@ -104,11 +108,37 @@
     save.init();
     var success = function (rep)
     {
-        console.log(rep);
+        var itemAddress = $("#team-address");
+        var itemLatLng = $("#lat-lng");
+        var poiList = $("#poi-list");
+        itemAddress.val(rep["address"]);
+        itemLatLng.val(rep["position"]["lat"] + "," + rep["position"]["lng"]);
+        var pois = rep["regeocode"]["pois"];
+        var city = rep["regeocode"]["addressComponent"]["city"];
+        var district = rep["regeocode"]["addressComponent"]["district"];
+        var province = rep["regeocode"]["addressComponent"]["province"];
+        var position = province + city + district;
+        var location = "";
+
+        var item = "";
+
+        for (var i = 0; i < pois.length; i++)
+        {
+            location = pois[i]["location"]["lat"] + "," + pois[i]["location"]["lng"];
+            item += '<li onclick="setAddress(\'' + position + pois[i]["name"] + '\',\'' + location + '\');" ><a href="javascript:(0);">' + pois[i]["name"] + '</a></li>';
+        }
+        poiList.empty();
+        poiList.append(item);
     };
     var fail = function (rep)
     {
         console.log(rep);
+    };
+
+    var setAddress = function (name, location)
+    {
+        $("#team-address").val(name);
+        $("#lat-lng").val(location);
     };
     dragMap.init("container", "keyword", success, fail);
 </script>

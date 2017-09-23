@@ -13,6 +13,9 @@ import javax.servlet.http.HttpSession;
 
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
+/**
+ * 系统登陆控制器
+ */
 @Controller
 public class LoginController
 {

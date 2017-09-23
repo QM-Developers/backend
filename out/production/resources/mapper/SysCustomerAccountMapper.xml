@@ -256,8 +256,10 @@
 
   <insert id="insertTeam">
     INSERT INTO my_team
-    (my_team_id,my_team_name,my_team_create_date)
-    SELECT team_id my_team_id,team_name my_team_name,team_create_date my_team_create_date
+    (my_team_id,my_team_name,my_team_create_date,
+    my_team_area,my_team_address,lat_lng)
+    SELECT team_id my_team_id,team_name my_team_name,team_create_date my_team_create_date,
+    team_area my_team_area,team_address my_team_address,lat_lng
     FROM sys_customer
     WHERE customer_id = #{custoemrId}
   </insert>

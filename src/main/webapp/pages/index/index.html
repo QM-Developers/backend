@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Amaze UI Admin index Examples</title>
+    <title>青麦科技 Manage system</title>
     <meta name="description" content="这是一个 index 页面">
     <meta name="keywords" content="index">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,8 +23,8 @@
 
 <header class="am-topbar am-topbar-inverse admin-header">
     <div class="am-topbar-brand">
-        <strong>Amaze UI</strong>
-        <small>后台管理模板</small>
+        <strong>青麦科技</strong>
+        <small>后台管理</small>
     </div>
 
     <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#topbar-collapse'}">
@@ -52,18 +52,14 @@
     <div class="admin-sidebar am-offcanvas" id="admin-offcanvas">
         <div class="am-offcanvas-bar admin-offcanvas-bar">
             <ul class="am-list admin-sidebar-list">
-                <li><a onclick="index.loadUserList()" href="javascript:(0)"><span class="am-icon-user"></span> 用户</a>
-                </li>
-                <li><a onclick="index.loadRoleList()" href="javascript:(0)"><span class="am-icon-user-plus"></span>
-                    角色</a></li>
-                <li><a onclick="index.loadCustomerList()" href="javascript:(0)"><span class="am-icon-users"></span>
-                    客户</a></li>
-                <li><a onclick="index.loadPermissionList()" href="javascript:(0)"><span class="am-icon-lock"></span> 权限</a>
-                </li>
-                <li><a onclick="index.loadTypeList2()" href="javascript:(0)"><span class="am-icon-bug"></span> 养殖类目</a>
-                </li>
-                <li><a onclick="index.load('../test.html')" href="javascript:(0)"><span class="am-icon-bug"></span> 测试</a>
-                </li>
+                <li><a onclick="index.loadUserList()" href="javascript:(0)"><span class="am-icon-user"></span> 用户</a></li>
+                <li><a onclick="index.loadRoleList()" href="javascript:(0)"><span class="am-icon-user-plus"></span>角色</a></li>
+                <li><a onclick="index.loadCustomerList()" href="javascript:(0)"><span class="am-icon-users"></span>客户</a></li>
+                <li><a onclick="index.loadPermissionList()" href="javascript:(0)"><span class="am-icon-lock"></span> 权限</a></li>
+                <li><a onclick="index.loadTypeList2()" href="javascript:(0)"><span class="am-icon-bug"></span> 养殖类目</a></li>
+                <li><a onclick="index.loadGoodsTypeList()" href="javascript:(0)"><span class="am-icon-cubes"></span> 商品类目</a></li>
+                <li><a onclick="index.loadQMPermission()" href="javascript:(0)"><span class="am-icon-lock"></span> 青麦权限</a></li>
+                <li><a onclick="index.loadQMRoleList()" href="javascript:(0)"><span class="am-icon-user-plus"></span> 青麦角色</a></li>
             </ul>
         </div>
     </div>
@@ -87,6 +83,7 @@
 <hidden id="hidden-select-name"></hidden>
 <hidden id="hidden-info-id"></hidden>
 <hidden id="hidden-customer-id"></hidden>
+<hidden id="hidden-qm-role-id"></hidden>
 
 
 <style type="text/css">

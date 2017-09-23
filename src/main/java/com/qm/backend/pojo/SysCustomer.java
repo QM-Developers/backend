@@ -39,6 +39,8 @@ public class SysCustomer {
 
     private Integer roleId;
 
+    private String latLng;
+
     public String getCustomerId() {
         return customerId;
     }
@@ -181,5 +183,15 @@ public class SysCustomer {
 
     public void setRoleId(Integer roleId) {
         this.roleId = roleId;
+    }
+
+    public String getLatLng()
+    {
+        return latLng;
+    }
+
+    public void setLatLng(String latLng)
+    {
+        this.latLng = latLng;
     }
 }

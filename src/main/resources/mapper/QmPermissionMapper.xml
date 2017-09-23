@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qm.backend.mapper.QmPermissionMapper">
+  <resultMap id="BaseResultMap" type="com.qm.backend.pojo.QmPermission">
+    <id column="qm_permission_id" jdbcType="VARCHAR" property="qmPermissionId" />
+    <result column="qm_permission_name" jdbcType="VARCHAR" property="qmPermissionName" />
+    <result column="qm_permission_describe" jdbcType="VARCHAR" property="qmPermissionDescribe" />
+    <result column="qm_permission_pid" jdbcType="VARCHAR" property="qmPermissionPid" />
+    <result column="sort" jdbcType="TINYINT" property="sort" />
+    <result column="qm_permission_type" jdbcType="TINYINT" property="qmPermissionType" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    qm_permission_id, qm_permission_name, qm_permission_describe, qm_permission_pid, 
+    sort, qm_permission_type
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from qm_permission
+    where qm_permission_id = #{qmPermissionId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from qm_permission
+    where qm_permission_id = #{qmPermissionId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.qm.backend.pojo.QmPermissionExample">
+    delete from qm_permission
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.qm.backend.pojo.QmPermission">
+    insert into qm_permission (qm_permission_id, qm_permission_name, 
+      qm_permission_describe, qm_permission_pid, 
+      sort, qm_permission_type)
+    values (#{qmPermissionId,jdbcType=VARCHAR}, #{qmPermissionName,jdbcType=VARCHAR}, 
+      #{qmPermissionDescribe,jdbcType=VARCHAR}, #{qmPermissionPid,jdbcType=VARCHAR}, 
+      #{sort,jdbcType=TINYINT}, #{qmPermissionType,jdbcType=TINYINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qm.backend.pojo.QmPermission">
+    insert into qm_permission
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="qmPermissionId != null">
+        qm_permission_id,
+      </if>
+      <if test="qmPermissionName != null">
+        qm_permission_name,
+      </if>
+      <if test="qmPermissionDescribe != null">
+        qm_permission_describe,
+      </if>
+      <if test="qmPermissionPid != null">
+        qm_permission_pid,
+      </if>
+      <if test="sort != null">
+        sort,
+      </if>
+      <if test="qmPermissionType != null">
+        qm_permission_type,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="qmPermissionId != null">
+        #{qmPermissionId,jdbcType=VARCHAR},
+      </if>
+      <if test="qmPermissionName != null">
+        #{qmPermissionName,jdbcType=VARCHAR},
+      </if>
+      <if test="qmPermissionDescribe != null">
+        #{qmPermissionDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="qmPermissionPid != null">
+        #{qmPermissionPid,jdbcType=VARCHAR},
+      </if>
+      <if test="sort != null">
+        #{sort,jdbcType=TINYINT},
+      </if>
+      <if test="qmPermissionType != null">
+        #{qmPermissionType,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.qm.backend.pojo.QmPermissionExample" resultType="java.lang.Long">
+    select count(*) from qm_permission
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update qm_permission
+    <set>
+      <if test="record.qmPermissionId != null">
+        qm_permission_id = #{record.qmPermissionId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.qmPermissionName != null">
+        qm_permission_name = #{record.qmPermissionName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.qmPermissionDescribe != null">
+        qm_permission_describe = #{record.qmPermissionDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="record.qmPermissionPid != null">
+        qm_permission_pid = #{record.qmPermissionPid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sort != null">
+        sort = #{record.sort,jdbcType=TINYINT},
+      </if>
+      <if test="record.qmPermissionType != null">
+        qm_permission_type = #{record.qmPermissionType,jdbcType=TINYINT},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update qm_permission
+    set qm_permission_id = #{record.qmPermissionId,jdbcType=VARCHAR},
+      qm_permission_name = #{record.qmPermissionName,jdbcType=VARCHAR},
+      qm_permission_describe = #{record.qmPermissionDescribe,jdbcType=VARCHAR},
+      qm_permission_pid = #{record.qmPermissionPid,jdbcType=VARCHAR},
+      sort = #{record.sort,jdbcType=TINYINT},
+      qm_permission_type = #{record.qmPermissionType,jdbcType=TINYINT}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qm.backend.pojo.QmPermission">
+    update qm_permission
+    <set>
+      <if test="qmPermissionName != null">
+        qm_permission_name = #{qmPermissionName,jdbcType=VARCHAR},
+      </if>
+      <if test="qmPermissionDescribe != null">
+        qm_permission_describe = #{qmPermissionDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="qmPermissionPid != null">
+        qm_permission_pid = #{qmPermissionPid,jdbcType=VARCHAR},
+      </if>
+      <if test="sort != null">
+        sort = #{sort,jdbcType=TINYINT},
+      </if>
+      <if test="qmPermissionType != null">
+        qm_permission_type = #{qmPermissionType,jdbcType=TINYINT},
+      </if>
+    </set>
+    where qm_permission_id = #{qmPermissionId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qm.backend.pojo.QmPermission">
+    update qm_permission
+    set qm_permission_name = #{qmPermissionName,jdbcType=VARCHAR},
+      qm_permission_describe = #{qmPermissionDescribe,jdbcType=VARCHAR},
+      qm_permission_pid = #{qmPermissionPid,jdbcType=VARCHAR},
+      sort = #{sort,jdbcType=TINYINT},
+      qm_permission_type = #{qmPermissionType,jdbcType=TINYINT}
+    where qm_permission_id = #{qmPermissionId,jdbcType=VARCHAR}
+  </update>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <resultMap id="QmPermissionRe" type="com.qm.backend.pojo.QmPermissionRe">
+    <result column="permission_id" property="permissionId" jdbcType="VARCHAR"/>
+    <result column="qm_permission_id" property="qmPermissionId" jdbcType="VARCHAR"/>
+  </resultMap>
+
+  <select id="selectByExample" parameterType="com.qm.backend.pojo.QmPermissionExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from qm_permission
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <if test="pageNum != null and pageSize != null">
+      LIMIT #{pageNum},#{pageSize}
+    </if>
+  </select>
+
+  <select id="countPermission" resultType="java.lang.Integer">
+    select sum(count) from
+    (select count(0) count from
+    position_permission_re where qm_permission_id = #{permissionId}
+    union
+    select count(0) count
+    from user_qm_permission_re where qm_permission_id = #{permissionId}) as t
+  </select>
+
+  <delete id="deletePermissionRe">
+    DELETE FROM qm_permission_re
+    WHERE qm_permission_id = #{permissionId}
+  </delete>
+
+  <select id="listPermission" resultMap="QmPermissionRe">
+    SELECT permission_id
+    FROM qm_permission_re
+    WHERE qm_permission_id = #{permissionId}
+  </select>
+
+</mapper>

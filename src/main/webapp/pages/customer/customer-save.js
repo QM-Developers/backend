@@ -50,7 +50,7 @@ var save = {
         });
     },
 
-    save:function ()
+    save: function ()
     {
         var url = Constant.getUrl("/customer/save");
         var params = {};
@@ -70,17 +70,21 @@ var save = {
         params["teamAddress"] = $("#team-address").val().trim();
         params["teamCreateDate"] = $("#team-create-date").val().trim();
         params["teamName"] = $("#team-name").val().trim();
+        params["latLng"] = $("#lat-lng").val().trim();
 
-        myjs.ajax_post(url,params,function (data)
+        myjs.ajax_post(url, params, function (data)
         {
             if (data.state === Constant.permission_denied)
+            {
                 alert("权限不足");
+                return;
+            }
             if (data.state === Constant.succeed)
                 save.back();
         });
     },
 
-    back:function ()
+    back: function ()
     {
         index.loadCustomerList();
     },

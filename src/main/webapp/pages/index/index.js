@@ -132,4 +132,24 @@ var index = {
             }
         });
     },
+
+    loadGoodsTypeList:function ()
+    {
+        index.load("../goods/type-list.html");
+    },
+
+    loadQMPermission:function ()
+    {
+        index.load("../qm_permission/qm-permission-list.html");
+    },
+
+    loadQMRoleList:function ()
+    {
+        index.load("../qm_role/qm-role-list.html");
+    },
+
+    loadQMRoleSave:function ()
+    {
+        index.load("../qm_role/qm-role-save.html");
+    },
 };
