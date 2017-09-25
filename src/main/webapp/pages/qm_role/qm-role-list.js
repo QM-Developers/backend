@@ -65,6 +65,7 @@ var list = {
                             '<td>' + (i + 1) + '</td>' +
                             '<td>' + data[i]["qmPermissionName"] + '</td>' +
                             '<td>' + data[i]["qmPermissionDescribe"] + '</td>' +
+                            '<td>' + data[i]["qmPermissionPid"] + '</td>' +
                             '<td>' +
                             '<div class="am-btn-toolbar">' +
                             '<div class="am-btn-group am-btn-group-xs">' +

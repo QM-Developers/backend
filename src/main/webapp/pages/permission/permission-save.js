@@ -1,5 +1,5 @@
 var save = {
-    permissionId:"",
+    permissionId: "",
 
     init: function ()
     {
@@ -18,7 +18,7 @@ var save = {
 
         params["permissionId"] = save.permissionId;
 
-        myjs.ajax_post(url,params,function (data)
+        myjs.ajax_post(url, params, function (data)
         {
             if (data.state === Constant.permission_denied)
             {
@@ -64,7 +64,7 @@ var save = {
         });
     },
 
-    back:function ()
+    back: function ()
     {
         index.loadPermissionList();
     },

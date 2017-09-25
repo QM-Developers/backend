@@ -100,6 +100,7 @@ public class PermissionServiceImpl implements PermissionService
     {
         PermissionExample example = new PermissionExample();
 
+        example.setOrderByClause("permission_name");
         List<Permission> types = mapper.selectByExample(example);
         List<TreeVO> result = new ArrayList<>();
 

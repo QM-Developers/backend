@@ -59,12 +59,24 @@ var list = {
             if (data.state === Constant.permission_denied)
                 alert("权限不足");
             else if (data.state === Constant.succeed)
+            {
                 list.listPermissionTree();
+                $("#permission-name").val("");
+                $("#permission-url").val("");
+            }
         });
     },
 
     remove: function ()
     {
+        var treeObj = $.fn.zTree.getZTreeObj("type-tree");
+        var nodes = treeObj.getSelectedNodes();
+        if (nodes[0].isParent)
+        {
+            alert("不能选择权限集合");
+            return;
+        }
+
         if (!confirm("确定要删除 " + $("#permission-name").val() + " 吗"))
             return;
 
@@ -75,7 +87,7 @@ var list = {
 
         myjs.ajax_post(url, params, function (data)
         {
-            switch(data.state)
+            switch (data.state)
             {
                 case Constant.permission_denied:
                     alert("权限不足");
@@ -105,7 +117,11 @@ var list = {
             if (data.state === Constant.permission_denied)
                 alert("权限不足");
             else if (data.state === Constant.succeed)
+            {
                 list.listPermissionTree();
+                $("#permission-name").val("");
+                $("#permission-url").val("");
+            }
         });
     }
 

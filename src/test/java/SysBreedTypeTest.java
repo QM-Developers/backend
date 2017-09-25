@@ -46,8 +46,8 @@ public class SysBreedTypeTest
         form.param("userId", "5198012fab4d45be806393acaded43ae");
         form.param("token", "1");
         form.param("selectId", "");
-        form.param("pageNum", "1");
-        form.param("pageSize", "10");
+//        form.param("pageNum", "1");
+//        form.param("pageSize", "10");
 
         WebTarget target = client.target(url);
 

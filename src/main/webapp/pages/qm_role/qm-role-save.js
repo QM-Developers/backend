@@ -30,6 +30,7 @@ var save = {
                 data = data.result;
                 $("#role-name").val(data["qmPermissionName"]);
                 $("#role-text").val(data["qmPermissionDescribe"]);
+                $("#role-code").val(data["qmPermissionPid"]);
             }
         });
     },
@@ -47,6 +48,7 @@ var save = {
 
         params["qmPermissionName"] = $("#role-name").val().trim();
         params["qmPermissionDescribe"] = $("#role-text").val().trim();
+        params["qmPermissionPid"] = $("#role-code").val().trim();
 
         myjs.ajax_post(url, params, function (data)
         {

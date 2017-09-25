@@ -10,6 +10,7 @@ import com.qm.backend.mapper.QmPermissionReMapper;
 import com.qm.backend.pojo.*;
 import com.qm.backend.util.IDGeneratorUtil;
 import com.qm.backend.util.PagingUtil;
+import com.qm.backend.util.ParameterUtil;
 import com.qm.backend.vo.PageVO;
 import com.qm.backend.vo.ResultVO;
 import com.qm.backend.vo.SessionVO;
@@ -33,8 +34,11 @@ public class QmPermissionServiceImpl implements QmPermissionService
     public String save(SessionVO sessionVO, QmPermission permission)
     {
         permission.setQmPermissionId(IDGeneratorUtil.generator());
-        permission.setQmPermissionPid("0");
         permission.setSort((byte) 0);
+        permission.setQmPermissionType((byte) 0);
+
+        if (ParameterUtil.objectIsNull(permission))
+            return JSONObject.toJSONString(new ResultVO((int) RequestConstant.FAILED_102,sessionVO.getToken()));
 
         int result = mapper.insert(permission);
 
