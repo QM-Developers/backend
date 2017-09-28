@@ -5,6 +5,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.qm.backend.constant.Constant;
 import com.qm.backend.constant.KeyConstant;
 import com.qm.backend.constant.RequestConstant;
+import com.qm.backend.constant.StringConstant;
 import com.qm.backend.mapper.QmPermissionMapper;
 import com.qm.backend.mapper.QmPermissionReMapper;
 import com.qm.backend.pojo.*;
@@ -16,6 +17,7 @@ import com.qm.backend.vo.ResultVO;
 import com.qm.backend.vo.SessionVO;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -36,6 +38,8 @@ public class QmPermissionServiceImpl implements QmPermissionService
         permission.setQmPermissionId(IDGeneratorUtil.generator());
         permission.setSort((byte) 0);
         permission.setQmPermissionType((byte) 0);
+        permission.setPermissionList(new ArrayList<>());
+        permission.setPermission(StringConstant.EMPTY);
 
         if (ParameterUtil.objectIsNull(permission))
             return JSONObject.toJSONString(new ResultVO((int) RequestConstant.FAILED_102,sessionVO.getToken()));

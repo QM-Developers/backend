@@ -21,6 +21,7 @@ import com.qm.backend.vo.SessionVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -41,6 +42,8 @@ public class SysRoleServiceImpl implements SysRoleService
     {
         role.setRoleId(IDGeneratorUtil.generator());
         role.setPermission(role.getPermission() == null ? StringConstant.EMPTY : role.getPermission());
+        role.setMemberId(StringConstant.EMPTY);
+        role.setPermissionList(new ArrayList<>());
 
         if (ParameterUtil.objectIsNull(role))
             return JSONObject.toJSONString(new ResultVO((int) RequestConstant.FAILED, sessionVO.getToken()));
