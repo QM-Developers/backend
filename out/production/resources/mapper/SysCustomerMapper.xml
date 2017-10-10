@@ -21,6 +21,7 @@
     <result column="had_account" jdbcType="TINYINT" property="hadAccount" />
     <result column="role_id" jdbcType="INTEGER" property="roleId" />
     <result column="lat_lng" jdbcType="VARCHAR" property="latLng" />
+    <result column="branch_type" jdbcType="TINYINT" property="branchType" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -81,12 +82,13 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    customer_id, customer_sex, customer_name, customer_phone, customer_identity, team_id,
-    team_name, team_create_date, team_area, team_address, department_id, department_name,
-    department_type, position_id, position_name, user_id, had_account, role_id, lat_lng
+    customer_id, customer_sex, customer_name, customer_phone, customer_identity, team_id, 
+    team_name, team_create_date, team_area, team_address, department_id, department_name, 
+    department_type, position_id, position_name, user_id, had_account, role_id, lat_lng, 
+    branch_type
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select
+    select 
     <include refid="Base_Column_List" />
     from sys_customer
     where customer_id = #{customerId,jdbcType=VARCHAR}
@@ -102,20 +104,20 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.qm.backend.pojo.SysCustomer">
-    insert into sys_customer (customer_id, customer_sex, customer_name,
-    customer_phone, customer_identity, team_id,
-    team_name, team_create_date, team_area,
-    team_address, department_id, department_name,
-    department_type, position_id, position_name,
-    user_id, had_account, role_id,
-    lat_lng)
-    values (#{customerId,jdbcType=VARCHAR}, #{customerSex,jdbcType=VARCHAR}, #{customerName,jdbcType=VARCHAR},
-    #{customerPhone,jdbcType=VARCHAR}, #{customerIdentity,jdbcType=VARCHAR}, #{teamId,jdbcType=VARCHAR},
-    #{teamName,jdbcType=VARCHAR}, #{teamCreateDate,jdbcType=TIMESTAMP}, #{teamArea,jdbcType=VARCHAR},
-    #{teamAddress,jdbcType=VARCHAR}, #{departmentId,jdbcType=VARCHAR}, #{departmentName,jdbcType=VARCHAR},
-    #{departmentType,jdbcType=VARCHAR}, #{positionId,jdbcType=VARCHAR}, #{positionName,jdbcType=VARCHAR},
-    #{userId,jdbcType=VARCHAR}, #{hadAccount,jdbcType=TINYINT}, #{roleId,jdbcType=INTEGER},
-    #{latLng,jdbcType=VARCHAR})
+    insert into sys_customer (customer_id, customer_sex, customer_name, 
+      customer_phone, customer_identity, team_id, 
+      team_name, team_create_date, team_area, 
+      team_address, department_id, department_name, 
+      department_type, position_id, position_name, 
+      user_id, had_account, role_id, 
+      lat_lng, branch_type)
+    values (#{customerId,jdbcType=VARCHAR}, #{customerSex,jdbcType=VARCHAR}, #{customerName,jdbcType=VARCHAR}, 
+      #{customerPhone,jdbcType=VARCHAR}, #{customerIdentity,jdbcType=VARCHAR}, #{teamId,jdbcType=VARCHAR}, 
+      #{teamName,jdbcType=VARCHAR}, #{teamCreateDate,jdbcType=TIMESTAMP}, #{teamArea,jdbcType=VARCHAR}, 
+      #{teamAddress,jdbcType=VARCHAR}, #{departmentId,jdbcType=VARCHAR}, #{departmentName,jdbcType=VARCHAR}, 
+      #{departmentType,jdbcType=VARCHAR}, #{positionId,jdbcType=VARCHAR}, #{positionName,jdbcType=VARCHAR}, 
+      #{userId,jdbcType=VARCHAR}, #{hadAccount,jdbcType=TINYINT}, #{roleId,jdbcType=INTEGER}, 
+      #{latLng,jdbcType=VARCHAR}, #{branchType,jdbcType=TINYINT})
   </insert>
   <insert id="insertSelective" parameterType="com.qm.backend.pojo.SysCustomer">
     insert into sys_customer
@@ -177,6 +179,9 @@
       <if test="latLng != null">
         lat_lng,
       </if>
+      <if test="branchType != null">
+        branch_type,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="customerId != null">
@@ -235,6 +240,9 @@
       </if>
       <if test="latLng != null">
         #{latLng,jdbcType=VARCHAR},
+      </if>
+      <if test="branchType != null">
+        #{branchType,jdbcType=TINYINT},
       </if>
     </trim>
   </insert>
@@ -304,6 +312,9 @@
       <if test="record.latLng != null">
         lat_lng = #{record.latLng,jdbcType=VARCHAR},
       </if>
+      <if test="record.branchType != null">
+        branch_type = #{record.branchType,jdbcType=TINYINT},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -312,24 +323,25 @@
   <update id="updateByExample" parameterType="map">
     update sys_customer
     set customer_id = #{record.customerId,jdbcType=VARCHAR},
-    customer_sex = #{record.customerSex,jdbcType=VARCHAR},
-    customer_name = #{record.customerName,jdbcType=VARCHAR},
-    customer_phone = #{record.customerPhone,jdbcType=VARCHAR},
-    customer_identity = #{record.customerIdentity,jdbcType=VARCHAR},
-    team_id = #{record.teamId,jdbcType=VARCHAR},
-    team_name = #{record.teamName,jdbcType=VARCHAR},
-    team_create_date = #{record.teamCreateDate,jdbcType=TIMESTAMP},
-    team_area = #{record.teamArea,jdbcType=VARCHAR},
-    team_address = #{record.teamAddress,jdbcType=VARCHAR},
-    department_id = #{record.departmentId,jdbcType=VARCHAR},
-    department_name = #{record.departmentName,jdbcType=VARCHAR},
-    department_type = #{record.departmentType,jdbcType=VARCHAR},
-    position_id = #{record.positionId,jdbcType=VARCHAR},
-    position_name = #{record.positionName,jdbcType=VARCHAR},
-    user_id = #{record.userId,jdbcType=VARCHAR},
-    had_account = #{record.hadAccount,jdbcType=TINYINT},
-    role_id = #{record.roleId,jdbcType=INTEGER},
-    lat_lng = #{record.latLng,jdbcType=VARCHAR}
+      customer_sex = #{record.customerSex,jdbcType=VARCHAR},
+      customer_name = #{record.customerName,jdbcType=VARCHAR},
+      customer_phone = #{record.customerPhone,jdbcType=VARCHAR},
+      customer_identity = #{record.customerIdentity,jdbcType=VARCHAR},
+      team_id = #{record.teamId,jdbcType=VARCHAR},
+      team_name = #{record.teamName,jdbcType=VARCHAR},
+      team_create_date = #{record.teamCreateDate,jdbcType=TIMESTAMP},
+      team_area = #{record.teamArea,jdbcType=VARCHAR},
+      team_address = #{record.teamAddress,jdbcType=VARCHAR},
+      department_id = #{record.departmentId,jdbcType=VARCHAR},
+      department_name = #{record.departmentName,jdbcType=VARCHAR},
+      department_type = #{record.departmentType,jdbcType=VARCHAR},
+      position_id = #{record.positionId,jdbcType=VARCHAR},
+      position_name = #{record.positionName,jdbcType=VARCHAR},
+      user_id = #{record.userId,jdbcType=VARCHAR},
+      had_account = #{record.hadAccount,jdbcType=TINYINT},
+      role_id = #{record.roleId,jdbcType=INTEGER},
+      lat_lng = #{record.latLng,jdbcType=VARCHAR},
+      branch_type = #{record.branchType,jdbcType=TINYINT}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -391,6 +403,9 @@
       <if test="latLng != null">
         lat_lng = #{latLng,jdbcType=VARCHAR},
       </if>
+      <if test="branchType != null">
+        branch_type = #{branchType,jdbcType=TINYINT},
+      </if>
     </set>
     where customer_id = #{customerId,jdbcType=VARCHAR}
   </update>
@@ -413,9 +428,11 @@
       user_id = #{userId,jdbcType=VARCHAR},
       had_account = #{hadAccount,jdbcType=TINYINT},
       role_id = #{roleId,jdbcType=INTEGER},
-      lat_lng = #{latLng,jdbcType=VARCHAR}
+      lat_lng = #{latLng,jdbcType=VARCHAR},
+      branch_type = #{branchType,jdbcType=TINYINT}
     where customer_id = #{customerId,jdbcType=VARCHAR}
   </update>
+
 
 
 
@@ -454,5 +471,6 @@
     </if>
     LIMIT #{pageNum},#{pageSize}
   </select>
+
 
 </mapper>

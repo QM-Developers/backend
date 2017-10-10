@@ -7,7 +7,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e3aa6b6-06e6-44d5-a6d6-2fe3f8e0d268" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/2eeb91e1-532a-4d55-988e-339c2db7371c.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/2eeb91e1-532a-4d55-988e-339c2db7371c.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/resources/mapper/SysCustomerAccountMapper.xml" afterPath="$PROJECT_DIR$/out/production/resources/mapper/SysCustomerAccountMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/resources/mapper/SysCustomerMapper.xml" afterPath="$PROJECT_DIR$/out/production/resources/mapper/SysCustomerMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/qm/backend/constant/StringConstant.java" afterPath="$PROJECT_DIR$/src/main/java/com/qm/backend/constant/StringConstant.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/qm/backend/mapper/SysCustomerAccountMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/qm/backend/mapper/SysCustomerAccountMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/qm/backend/pojo/SysCustomer.java" afterPath="$PROJECT_DIR$/src/main/java/com/qm/backend/pojo/SysCustomer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/qm/backend/pojo/SysCustomerExample.java" afterPath="$PROJECT_DIR$/src/main/java/com/qm/backend/pojo/SysCustomerExample.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/qm/backend/service/QmPermissionServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/qm/backend/service/QmPermissionServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/qm/backend/service/SysCustomerAccountServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/qm/backend/service/SysCustomerAccountServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/qm/backend/service/SysCustomerServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/qm/backend/service/SysCustomerServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapper/SysCustomerAccountMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/SysCustomerAccountMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapper/SysCustomerMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/SysCustomerMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/pages/qm_role/qm-role-save.html" afterPath="$PROJECT_DIR$/src/main/webapp/pages/qm_role/qm-role-save.html" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -92,28 +105,38 @@
       <file leaf-file-name="QmPermissionController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/qm/backend/controller/QmPermissionController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="51" column="28" lean-forward="false" selection-start-line="51" selection-start-column="28" selection-end-line="51" selection-end-column="28" />
+            <state relative-caret-position="624">
+              <caret line="92" column="24" lean-forward="true" selection-start-line="92" selection-start-column="24" selection-end-line="92" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RequestConstant.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/qm/backend/constant/RequestConstant.java">
+      <file leaf-file-name="QmPermissionService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/qm/backend/service/QmPermissionService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state relative-caret-position="288">
+              <caret line="14" column="11" lean-forward="false" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AccountConstant.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/qm/backend/constant/AccountConstant.java">
+      <file leaf-file-name="QmPermissionServiceImpl.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/qm/backend/service/QmPermissionServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="4" lean-forward="false" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
+            <state relative-caret-position="154">
+              <caret line="72" column="63" lean-forward="false" selection-start-line="72" selection-start-column="63" selection-end-line="72" selection-end-column="63" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SysCustomerController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/qm/backend/controller/SysCustomerController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="222">
+              <caret line="50" column="6" lean-forward="false" selection-start-line="50" selection-start-column="6" selection-end-line="50" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -154,13 +177,13 @@
       <find>myjs.ajax_post</find>
       <find>selectByExample</find>
       <find>selectBy</find>
-      <find>select</find>
       <find>系统角色</find>
       <find>/role/</find>
       <find>selectB</find>
       <find>$.fn.zTree.getZTreeObj(&quot;tree&quot;);</find>
       <find>listPermission</find>
       <find>showPermissionModel</find>
+      <find>select</find>
     </findStrings>
     <replaceStrings>
       <replace>role</replace>
@@ -538,15 +561,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/pages/permission/permission-list.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/pages/role/role-list.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/pages/user/user-list.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/pages/test.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/qm/backend/pojo/SysCustomer.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/SysCustomerMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/SysCustomerAccountMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/pages/customer/customer-save.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/pages/customer/customer-save.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/qm/backend/pojo/GoodsTypeinfoExample.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qm/backend/util/PagingUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qm/backend/service/GoodsTypeinfoService.java" />
@@ -578,7 +592,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/mapper/QmPermissionMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/pages/qm_role/qm-role-list.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/pages/qm_role/qm-role-save.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/pages/qm_role/qm-role-save.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/pages/qm_role/qm-role-list.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/pages/permission/permission-save.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/pages/qm_permission/qm-permission-list.js" />
@@ -588,6 +601,16 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/log4j/log4j.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/qm/backend/service/SysRoleServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/pages/qm_role/qm-role-save.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qm/backend/constant/BranchConstant.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qm/backend/constant/StringConstant.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/SysCustomerAccountMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qm/backend/service/SysCustomerAccountServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qm/backend/mapper/SysCustomerAccountMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/SysCustomerMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qm/backend/pojo/SysCustomerExample.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qm/backend/mapper/SysCustomerMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/qm/backend/service/SysCustomerServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/qm/backend/service/QmPermissionServiceImpl.java" />
       </list>
     </option>
@@ -612,10 +635,11 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="373" />
-    <option name="width" value="1556" />
-    <option name="height" value="1005" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="479" />
+    <option name="y" value="9" />
+    <option name="width" value="1545" />
+    <option name="height" value="1039" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -660,10 +684,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -704,27 +727,37 @@
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="constant" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="backend" type="b2602c69:ProjectViewProjectNode" />
               <item name="backend" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="mapper" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="backend" type="b2602c69:ProjectViewProjectNode" />
               <item name="backend" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="script" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="backend" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="mapper" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -740,12 +773,11 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.qm.backend.service" />
-      <recent name="com.qm.backend.mapper" />
-      <recent name="com.qm.backend.interceptor" />
-      <recent name="com.qm.backend.controller" />
-      <recent name="com.qm.backend.dao" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\WorkSpace\work\backend\src\main\resources\mapper" />
+      <recent name="D:\WorkSpace\work\backend\src\main\java\com\qm\backend\pojo" />
+      <recent name="D:\WorkSpace\work\backend\src\main\java\com\qm\backend\mapper" />
+      <recent name="D:\WorkSpace\work\backend\src\main\webapp" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\WorkSpace\work\backend\src\main\webapp\pages\qm_role" />
@@ -755,15 +787,17 @@
       <recent name="D:\WorkSpace\work\backend\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.qm.backend.constant" />
       <recent name="com.qm.backend.vo" />
       <recent name="com.qm.backend.util" />
       <recent name="com.qm.backend.filter" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\WorkSpace\work\backend\src\main\resources\mapper" />
-      <recent name="D:\WorkSpace\work\backend\src\main\java\com\qm\backend\pojo" />
-      <recent name="D:\WorkSpace\work\backend\src\main\java\com\qm\backend\mapper" />
-      <recent name="D:\WorkSpace\work\backend\src\main\webapp" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.qm.backend.service" />
+      <recent name="com.qm.backend.mapper" />
+      <recent name="com.qm.backend.interceptor" />
+      <recent name="com.qm.backend.controller" />
+      <recent name="com.qm.backend.dao" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1044,14 +1078,16 @@
       <workItem from="1506398470596" duration="4705000" />
       <workItem from="1506765433243" duration="384000" />
       <workItem from="1507252920625" duration="4836000" />
+      <workItem from="1507336190541" duration="2256000" />
+      <workItem from="1507595896579" duration="6724000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="216934000" />
+    <option name="totallyTimeSpent" value="225914000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="373" y="0" width="1556" height="1005" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -1063,7 +1099,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6130435" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7119565" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.325" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1074,7 +1110,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32796317" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22192514" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18123667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20469083" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1101,104 +1137,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qm/backend/pojo/SysRole.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/SysRoleMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="213" column="34" lean-forward="true" selection-start-line="213" selection-start-column="34" selection-end-line="213" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/QmPermissionReMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="30" column="22" lean-forward="true" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/role/role-list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="25" column="27" lean-forward="true" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qm/backend/mapper/QmPermissionMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="726">
-          <caret line="39" column="25" lean-forward="false" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qm/backend/pojo/QmPermissionRe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="3" column="31" lean-forward="true" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/QmPermissionMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6576">
-          <caret line="274" column="39" lean-forward="false" selection-start-line="274" selection-start-column="39" selection-end-line="274" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/customer/customer-list.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="77" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/permission/permission-list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="26" column="46" lean-forward="false" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/qm_role/qm-role-list.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3864">
-          <caret line="161" column="25" lean-forward="false" selection-start-line="161" selection-start-column="25" selection-end-line="161" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/qm_role/qm-role-save.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="21" column="34" lean-forward="false" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/qm_role/qm-role-list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="24" column="33" lean-forward="true" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/qm_role/qm-role-save.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="64" column="6" lean-forward="true" selection-start-line="64" selection-start-column="6" selection-end-line="64" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/permission/permission-save.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="606">
@@ -1333,13 +1271,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qm/backend/controller/SysCustomerAccountController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1440">
-          <caret line="75" column="44" lean-forward="true" selection-start-line="75" selection-start-column="44" selection-end-line="75" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/qm/backend/mapper/PermissionInterceptorMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -1358,13 +1289,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="37" column="30" lean-forward="false" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qm/backend/controller/SysCustomerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="35" column="29" lean-forward="true" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -1396,27 +1320,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qm/backend/service/QmPermissionService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="11" lean-forward="false" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qm/backend/pojo/QmPermission.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qm/backend/service/QmPermissionServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="35" column="47" lean-forward="true" selection-start-line="35" selection-start-column="47" selection-end-line="35" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/test.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -1428,7 +1331,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="366">
           <caret line="17" column="44" lean-forward="true" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1436,32 +1338,231 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
           <caret line="38" column="20" lean-forward="true" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
-          <folding>
-            <marker date="1506151655508" expanded="true" signature="868:991" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qm/backend/controller/QmPermissionController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="51" column="28" lean-forward="false" selection-start-line="51" selection-start-column="28" selection-end-line="51" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/qm/backend/constant/RequestConstant.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/qm/backend/constant/AccountConstant.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qm/backend/controller/GoodsTypeinfoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="771">
+          <caret line="122" column="0" lean-forward="false" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/qm_role/qm-role-save.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-72">
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qm/backend/constant/BranchConstant.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="4" lean-forward="false" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qm/backend/controller/SysCustomerAccountController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="93" column="31" lean-forward="false" selection-start-line="93" selection-start-column="31" selection-end-line="93" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qm/backend/service/SysCustomerAccountService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="14" column="11" lean-forward="false" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qm/backend/constant/StringConstant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="5" column="47" lean-forward="false" selection-start-line="5" selection-start-column="47" selection-end-line="5" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qm/backend/mapper/SysCustomerAccountMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="592">
+          <caret line="39" column="38" lean-forward="true" selection-start-line="39" selection-start-column="38" selection-end-line="39" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qm/backend/mapper/SysCustomerMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qm/backend/pojo/SysCustomerExample.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="77" column="35" lean-forward="false" selection-start-line="77" selection-start-column="28" selection-end-line="77" selection-end-column="35" />
+          <folding>
+            <element signature="e#1556#1557#0" expanded="false" />
+            <element signature="e#1594#1595#0" expanded="false" />
+            <element signature="e#1712#1713#0" expanded="false" />
+            <element signature="e#1752#1753#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qm/backend/mapper/SysCustomerMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="8" column="11" lean-forward="false" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/SysCustomerMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="746">
+          <caret line="471" column="31" lean-forward="false" selection-start-line="471" selection-start-column="31" selection-end-line="471" selection-end-column="31" />
+          <folding>
+            <marker date="1507599198908" expanded="true" signature="4573:4698" ph="select from sys_customer" />
+            <marker date="1507599198908" expanded="true" signature="4783:4862" ph="delete from " />
+            <marker date="1507599198908" expanded="true" signature="4966:4990" ph="delete from " />
+            <marker date="1507599198908" expanded="true" signature="5170:6212" ph="insert into sys_customer... " />
+            <marker date="1507599198908" expanded="true" signature="9820:9853" ph="select count... sys_customer" />
+            <marker date="1507599198908" expanded="true" signature="12604:13825" ph="update sys_c... " />
+            <marker date="1507599198908" expanded="true" signature="14036:16118" ph="update sys_c... " />
+            <marker date="1507599198908" expanded="true" signature="16218:17302" ph="update sys_c... " />
+            <marker date="1507599198908" expanded="true" signature="17456:17768" ph="select disti... sys_customer" />
+            <marker date="1507599198908" expanded="true" signature="17456:17780" ph="select disti... sys_customer" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/SysCustomerAccountMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="286" column="11" lean-forward="true" selection-start-line="286" selection-start-column="11" selection-end-line="286" selection-end-column="11" />
+          <folding>
+            <marker date="1507599100988" expanded="true" signature="3275:3406" ph="select from sys_customer_account" />
+            <marker date="1507599100988" expanded="true" signature="3491:3576" ph="delete from " />
+            <marker date="1507599100988" expanded="true" signature="3687:3719" ph="delete from " />
+            <marker date="1507599100988" expanded="true" signature="3906:4245" ph="insert into sys_customer_account... " />
+            <marker date="1507599100988" expanded="true" signature="5602:5643" ph="select count... sys_customer_account" />
+            <marker date="1507599100988" expanded="true" signature="6728:7106" ph="update sys_c... " />
+            <marker date="1507599100988" expanded="true" signature="7324:7937" ph="update sys_c... " />
+            <marker date="1507599100988" expanded="true" signature="8044:8383" ph="update sys_c... " />
+            <marker date="1507599100988" expanded="true" signature="8479:8543" ph="SELECT user_... sys_user" />
+            <marker date="1507599100988" expanded="true" signature="8681:9013" ph="select disti... sys_customer_account" />
+            <marker date="1507599100988" expanded="true" signature="9058:9384" ph="INSERT INTO my_team... " />
+            <marker date="1507599100988" expanded="true" signature="9174:9384" ph="SELECT team_... sys_customer" />
+            <marker date="1507599100988" expanded="true" signature="9435:9721" ph="INSERT INTO team_department... " />
+            <marker date="1507599100988" expanded="true" signature="9545:9721" ph="SELECT depar... sys_customer" />
+            <marker date="1507599100988" expanded="true" signature="9766:10147" ph="INSERT INTO user... " />
+            <marker date="1507599100988" expanded="true" signature="9905:10147" ph="SELECT custo... sys_customer" />
+            <marker date="1507599100988" expanded="true" signature="10196:10412" ph="INSERT INTO department_position... " />
+            <marker date="1507599100988" expanded="true" signature="10283:10412" ph="SELECT posit... sys_customer" />
+            <marker date="1507599100988" expanded="true" signature="10459:10919" ph="INSERT INTO qm_branch... " />
+            <marker date="1507599100988" expanded="true" signature="10459:10932" ph="INSERT INTO qm_branch... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qm/backend/service/SysCustomerServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qm/backend/service/SysCustomerAccountServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="119" column="23" lean-forward="true" selection-start-line="119" selection-start-column="23" selection-end-line="119" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qm/backend/controller/SysCustomerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="50" column="6" lean-forward="false" selection-start-line="50" selection-start-column="6" selection-end-line="50" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/QmPermissionMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="230" column="0" lean-forward="true" selection-start-line="230" selection-start-column="0" selection-end-line="230" selection-end-column="0" />
+          <folding>
+            <marker date="1506156398275" expanded="true" signature="3357:3492" ph="select from qm_permission" />
+            <marker date="1506156398275" expanded="true" signature="3577:3666" ph="delete from " />
+            <marker date="1506156398275" expanded="true" signature="3771:3796" ph="delete from " />
+            <marker date="1506156398275" expanded="true" signature="3977:4367" ph="insert into qm_permission... " />
+            <marker date="1506156398275" expanded="true" signature="5817:5851" ph="select count... qm_permission" />
+            <marker date="1506156398275" expanded="true" signature="7014:7443" ph="update qm_pe... " />
+            <marker date="1506156398275" expanded="true" signature="7655:8341" ph="update qm_pe... " />
+            <marker date="1506156398275" expanded="true" signature="8442:8832" ph="update qm_pe... " />
+            <marker date="1506156398275" expanded="true" signature="9714:9950" ph="select sum(c... count" />
+            <marker date="1506156398275" expanded="true" signature="9742:9944" ph="select count... " />
+            <marker date="1506156398275" expanded="true" signature="10003:10076" ph="DELETE FROM " />
+            <marker date="1506156398275" expanded="true" signature="10152:10243" ph="SELECT permi... qm_permission_re" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qm/backend/controller/QmPermissionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="624">
+          <caret line="92" column="24" lean-forward="true" selection-start-line="92" selection-start-column="24" selection-end-line="92" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qm/backend/service/QmPermissionService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="14" column="11" lean-forward="false" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qm/backend/pojo/QmPermission.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="7" column="35" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qm/backend/service/QmPermissionServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="72" column="63" lean-forward="false" selection-start-line="72" selection-start-column="63" selection-end-line="72" selection-end-column="63" />
           <folding />
         </state>
       </provider>

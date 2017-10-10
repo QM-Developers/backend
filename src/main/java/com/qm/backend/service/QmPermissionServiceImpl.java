@@ -80,6 +80,7 @@ public class QmPermissionServiceImpl implements QmPermissionService
     {
         QmPermissionExample example = new QmPermissionExample();
 
+        example.setOrderByClause("qm_permission_name");
         example.setPageNum(PagingUtil.getStart(pageVO.getPageNum(), pageVO.getPageSize()));
         example.setPageSize(pageVO.getPageSize());
         List<QmPermission> result = mapper.selectByExample(example);

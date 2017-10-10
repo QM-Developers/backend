@@ -295,4 +295,18 @@
     WHERE customer_id = #{custoemrId}
   </insert>
 
+  <insert id="insertBranch">
+    INSERT INTO qm_branch
+    (branch_id, branch_name, department_id,
+    my_team_id,department_name, user_id,
+    user_name, user_phone, branch_area,
+    lat_lng,branch_type)
+    SELECT department_id branch_id,department_name branch_name,department_id,
+    team_id my_team_id,department_name,customer_id user_id,
+    customer_name user_name,customer_phone user_phone,team_address branch_area,
+    lat_lng,branch_type
+    FROM sys_customer
+    WHERE customer_id = #{custoemrId}
+  </insert>
+
 </mapper>

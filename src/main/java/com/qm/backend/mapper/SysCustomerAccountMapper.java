@@ -1,5 +1,6 @@
 package com.qm.backend.mapper;
 
+import com.qm.backend.pojo.QmBranch;
 import com.qm.backend.pojo.SysCustomerAccount;
 import com.qm.backend.pojo.SysCustomerAccountExample;
 import java.util.List;
@@ -39,4 +40,6 @@ public interface SysCustomerAccountMapper {
     int insertUser(String customerId);
 
     int insertPosition(String customerId);
+
+    int insertBranch(String customerId);
 }

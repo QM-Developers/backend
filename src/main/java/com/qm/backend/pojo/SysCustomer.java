@@ -41,6 +41,8 @@ public class SysCustomer {
 
     private String latLng;
 
+    private Byte branchType;
+
     public String getCustomerId() {
         return customerId;
     }
@@ -185,13 +187,19 @@ public class SysCustomer {
         this.roleId = roleId;
     }
 
-    public String getLatLng()
-    {
+    public String getLatLng() {
         return latLng;
     }
 
-    public void setLatLng(String latLng)
-    {
-        this.latLng = latLng;
+    public void setLatLng(String latLng) {
+        this.latLng = latLng == null ? null : latLng.trim();
+    }
+
+    public Byte getBranchType() {
+        return branchType;
+    }
+
+    public void setBranchType(Byte branchType) {
+        this.branchType = branchType;
     }
 }

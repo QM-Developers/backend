@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.qm.backend.constant.*;
 import com.qm.backend.mapper.SysCustomerAccountMapper;
 import com.qm.backend.mapper.SysCustomerMapper;
+import com.qm.backend.pojo.QmBranch;
 import com.qm.backend.pojo.SysCustomer;
 import com.qm.backend.pojo.SysCustomerAccount;
 import com.qm.backend.pojo.SysCustomerAccountExample;
@@ -95,7 +96,7 @@ public class SysCustomerAccountServiceImpl implements SysCustomerAccountService
         account = mapper.selectByPrimaryKey(account.getAccountId());
 
         if (AccountConstant.WAITING != account.getAccountStatus())
-            return JSONObject.toJSONString(new ResultVO((int) RequestConstant.FAILED_102,sessionVO.getToken()));
+            return JSONObject.toJSONString(new ResultVO((int) RequestConstant.FAILED_102, sessionVO.getToken()));
 
         int result = 1;
         int index = 0;
@@ -117,12 +118,15 @@ public class SysCustomerAccountServiceImpl implements SysCustomerAccountService
                     result = mapper.insertPosition(account.getCustomerId());
                     break;
                 case 4:
+                    result = mapper.insertBranch(account.getCustomerId());
+                    break;
+                case 5:
                     SysCustomerAccount newAccount = new SysCustomerAccount();
                     newAccount.setAccountId(account.getAccountId());
                     newAccount.setAccountStatus(AccountConstant.ACCEPT);
                     result = mapper.updateByPrimaryKeySelective(newAccount);
                     break;
-                case 5:
+                case 6:
                     SysCustomer customer = new SysCustomer();
                     customer.setCustomerId(account.getCustomerId());
                     customer.setHadAccount(CustomerConstant.ACCOUNT_HAD);
@@ -135,7 +139,7 @@ public class SysCustomerAccountServiceImpl implements SysCustomerAccountService
             index++;
         }
 
-        if (7 != index)
+        if (8 != index)
             throw new RuntimeException(Constant.SAVE_FAILED);
 
         return JSONObject.toJSONString(new ResultVO((int) RequestConstant.SUCCEED, sessionVO.getToken()));

@@ -1,10 +1,7 @@
 package com.qm.backend.service;
 
 import com.alibaba.fastjson.JSONObject;
-import com.qm.backend.constant.CustomerConstant;
-import com.qm.backend.constant.KeyConstant;
-import com.qm.backend.constant.RequestConstant;
-import com.qm.backend.constant.RoleConstant;
+import com.qm.backend.constant.*;
 import com.qm.backend.mapper.SysCustomerMapper;
 import com.qm.backend.pojo.SysCustomer;
 import com.qm.backend.pojo.SysCustomerExample;
@@ -40,6 +37,7 @@ public class SysCustomerServiceImpl implements SysCustomerService
         customer.setDepartmentType(CustomerConstant.DEPARTMENT_TYPE);
         customer.setPositionId(IDGeneratorUtil.generator());
         customer.setPositionName(CustomerConstant.POSITION_NAME);
+        customer.setBranchType(BranchConstant.BRANCH_FIRST);
 
         int result = mapper.insertSelective(customer);
         result = result < 1 ? RequestConstant.FAILED : RequestConstant.SUCCEED;

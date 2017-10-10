@@ -5,15 +5,13 @@ import java.util.Date;
 import java.util.List;
 
 public class SysCustomerExample {
-    private int pageNum;
-
-    private int pageSize;
-
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
+    private int pageNum;
+    private Integer pageSize;
 
     public SysCustomerExample() {
         oredCriteria = new ArrayList<Criteria>();
@@ -66,6 +64,26 @@ public class SysCustomerExample {
         oredCriteria.clear();
         orderByClause = null;
         distinct = false;
+    }
+
+    public void setPageNum(int pageNum)
+    {
+        this.pageNum = pageNum;
+    }
+
+    public int getPageNum()
+    {
+        return pageNum;
+    }
+
+    public void setPageSize(Integer pageSize)
+    {
+        this.pageSize = pageSize;
+    }
+
+    public Integer getPageSize()
+    {
+        return pageSize;
     }
 
     protected abstract static class GeneratedCriteria {
@@ -1338,6 +1356,136 @@ public class SysCustomerExample {
             addCriterion("role_id not between", value1, value2, "roleId");
             return (Criteria) this;
         }
+
+        public Criteria andLatLngIsNull() {
+            addCriterion("lat_lng is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andLatLngIsNotNull() {
+            addCriterion("lat_lng is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andLatLngEqualTo(String value) {
+            addCriterion("lat_lng =", value, "latLng");
+            return (Criteria) this;
+        }
+
+        public Criteria andLatLngNotEqualTo(String value) {
+            addCriterion("lat_lng <>", value, "latLng");
+            return (Criteria) this;
+        }
+
+        public Criteria andLatLngGreaterThan(String value) {
+            addCriterion("lat_lng >", value, "latLng");
+            return (Criteria) this;
+        }
+
+        public Criteria andLatLngGreaterThanOrEqualTo(String value) {
+            addCriterion("lat_lng >=", value, "latLng");
+            return (Criteria) this;
+        }
+
+        public Criteria andLatLngLessThan(String value) {
+            addCriterion("lat_lng <", value, "latLng");
+            return (Criteria) this;
+        }
+
+        public Criteria andLatLngLessThanOrEqualTo(String value) {
+            addCriterion("lat_lng <=", value, "latLng");
+            return (Criteria) this;
+        }
+
+        public Criteria andLatLngLike(String value) {
+            addCriterion("lat_lng like", value, "latLng");
+            return (Criteria) this;
+        }
+
+        public Criteria andLatLngNotLike(String value) {
+            addCriterion("lat_lng not like", value, "latLng");
+            return (Criteria) this;
+        }
+
+        public Criteria andLatLngIn(List<String> values) {
+            addCriterion("lat_lng in", values, "latLng");
+            return (Criteria) this;
+        }
+
+        public Criteria andLatLngNotIn(List<String> values) {
+            addCriterion("lat_lng not in", values, "latLng");
+            return (Criteria) this;
+        }
+
+        public Criteria andLatLngBetween(String value1, String value2) {
+            addCriterion("lat_lng between", value1, value2, "latLng");
+            return (Criteria) this;
+        }
+
+        public Criteria andLatLngNotBetween(String value1, String value2) {
+            addCriterion("lat_lng not between", value1, value2, "latLng");
+            return (Criteria) this;
+        }
+
+        public Criteria andBranchTypeIsNull() {
+            addCriterion("branch_type is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andBranchTypeIsNotNull() {
+            addCriterion("branch_type is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andBranchTypeEqualTo(Byte value) {
+            addCriterion("branch_type =", value, "branchType");
+            return (Criteria) this;
+        }
+
+        public Criteria andBranchTypeNotEqualTo(Byte value) {
+            addCriterion("branch_type <>", value, "branchType");
+            return (Criteria) this;
+        }
+
+        public Criteria andBranchTypeGreaterThan(Byte value) {
+            addCriterion("branch_type >", value, "branchType");
+            return (Criteria) this;
+        }
+
+        public Criteria andBranchTypeGreaterThanOrEqualTo(Byte value) {
+            addCriterion("branch_type >=", value, "branchType");
+            return (Criteria) this;
+        }
+
+        public Criteria andBranchTypeLessThan(Byte value) {
+            addCriterion("branch_type <", value, "branchType");
+            return (Criteria) this;
+        }
+
+        public Criteria andBranchTypeLessThanOrEqualTo(Byte value) {
+            addCriterion("branch_type <=", value, "branchType");
+            return (Criteria) this;
+        }
+
+        public Criteria andBranchTypeIn(List<Byte> values) {
+            addCriterion("branch_type in", values, "branchType");
+            return (Criteria) this;
+        }
+
+        public Criteria andBranchTypeNotIn(List<Byte> values) {
+            addCriterion("branch_type not in", values, "branchType");
+            return (Criteria) this;
+        }
+
+        public Criteria andBranchTypeBetween(Byte value1, Byte value2) {
+            addCriterion("branch_type between", value1, value2, "branchType");
+            return (Criteria) this;
+        }
+
+        public Criteria andBranchTypeNotBetween(Byte value1, Byte value2) {
+            addCriterion("branch_type not between", value1, value2, "branchType");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {
@@ -1431,26 +1579,5 @@ public class SysCustomerExample {
         protected Criterion(String condition, Object value, Object secondValue) {
             this(condition, value, secondValue, null);
         }
-    }
-
-
-    public int getPageNum()
-    {
-        return pageNum;
-    }
-
-    public void setPageNum(int pageNum)
-    {
-        this.pageNum = pageNum;
-    }
-
-    public int getPageSize()
-    {
-        return pageSize;
-    }
-
-    public void setPageSize(int pageSize)
-    {
-        this.pageSize = pageSize;
     }
 }
