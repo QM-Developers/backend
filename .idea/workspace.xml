@@ -2,25 +2,12 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="Gradle : com.qm.backend : backend-1.0-SNAPSHOT.war (exploded)" />
+      <artifact name="Gradle : com.qm.backend : backend-1.0-SNAPSHOT.war" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e3aa6b6-06e6-44d5-a6d6-2fe3f8e0d268" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/2eeb91e1-532a-4d55-988e-339c2db7371c.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/2eeb91e1-532a-4d55-988e-339c2db7371c.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/resources/mapper/SysCustomerAccountMapper.xml" afterPath="$PROJECT_DIR$/out/production/resources/mapper/SysCustomerAccountMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/resources/mapper/SysCustomerMapper.xml" afterPath="$PROJECT_DIR$/out/production/resources/mapper/SysCustomerMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/qm/backend/constant/StringConstant.java" afterPath="$PROJECT_DIR$/src/main/java/com/qm/backend/constant/StringConstant.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/qm/backend/mapper/SysCustomerAccountMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/qm/backend/mapper/SysCustomerAccountMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/qm/backend/pojo/SysCustomer.java" afterPath="$PROJECT_DIR$/src/main/java/com/qm/backend/pojo/SysCustomer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/qm/backend/pojo/SysCustomerExample.java" afterPath="$PROJECT_DIR$/src/main/java/com/qm/backend/pojo/SysCustomerExample.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/qm/backend/service/QmPermissionServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/qm/backend/service/QmPermissionServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/qm/backend/service/SysCustomerAccountServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/qm/backend/service/SysCustomerAccountServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/qm/backend/service/SysCustomerServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/qm/backend/service/SysCustomerServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapper/SysCustomerAccountMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/SysCustomerAccountMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapper/SysCustomerMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/SysCustomerMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/pages/qm_role/qm-role-save.html" afterPath="$PROJECT_DIR$/src/main/webapp/pages/qm_role/qm-role-save.html" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -105,8 +92,8 @@
       <file leaf-file-name="QmPermissionController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/qm/backend/controller/QmPermissionController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="624">
-              <caret line="92" column="24" lean-forward="true" selection-start-line="92" selection-start-column="24" selection-end-line="92" selection-end-column="24" />
+            <state relative-caret-position="1368">
+              <caret line="72" column="56" lean-forward="false" selection-start-line="72" selection-start-column="56" selection-end-line="72" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -122,21 +109,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QmPermissionServiceImpl.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="QmPermissionServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/qm/backend/service/QmPermissionServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="72" column="63" lean-forward="false" selection-start-line="72" selection-start-column="63" selection-end-line="72" selection-end-column="63" />
+            <state relative-caret-position="1680">
+              <caret line="88" column="58" lean-forward="false" selection-start-line="88" selection-start-column="58" selection-end-line="88" selection-end-column="58" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SysCustomerController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SysCustomerController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/qm/backend/controller/SysCustomerController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="50" column="6" lean-forward="false" selection-start-line="50" selection-start-column="6" selection-end-line="50" selection-end-column="6" />
+            <state relative-caret-position="120">
+              <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -636,10 +623,10 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="479" />
-    <option name="y" value="9" />
+    <option name="x" value="229" />
+    <option name="y" value="13" />
     <option name="width" value="1545" />
-    <option name="height" value="1039" />
+    <option name="height" value="937" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -684,9 +671,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -757,6 +741,9 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -1080,11 +1067,16 @@
       <workItem from="1507252920625" duration="4836000" />
       <workItem from="1507336190541" duration="2256000" />
       <workItem from="1507595896579" duration="6724000" />
+      <workItem from="1507631553626" duration="21000" />
+      <workItem from="1507685448049" duration="3374000" />
+      <workItem from="1507718830079" duration="11000" />
+      <workItem from="1507790585233" duration="96000" />
+      <workItem from="1507791490238" duration="4627000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="225914000" />
+    <option name="totallyTimeSpent" value="234043000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1110,7 +1102,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32796317" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18123667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1913646" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20469083" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1345,7 +1337,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
           <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1353,7 +1344,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1361,7 +1351,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="771">
           <caret line="122" column="0" lean-forward="false" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1369,7 +1358,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-72">
           <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1377,7 +1365,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1385,7 +1372,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
           <caret line="93" column="31" lean-forward="false" selection-start-line="93" selection-start-column="31" selection-end-line="93" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1393,7 +1379,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="14" column="11" lean-forward="false" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1401,7 +1386,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="5" column="47" lean-forward="false" selection-start-line="5" selection-start-column="47" selection-end-line="5" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1409,7 +1393,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="592">
           <caret line="39" column="38" lean-forward="true" selection-start-line="39" selection-start-column="38" selection-end-line="39" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1417,7 +1400,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1425,12 +1407,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="77" column="35" lean-forward="false" selection-start-line="77" selection-start-column="28" selection-end-line="77" selection-end-column="35" />
-          <folding>
-            <element signature="e#1556#1557#0" expanded="false" />
-            <element signature="e#1594#1595#0" expanded="false" />
-            <element signature="e#1712#1713#0" expanded="false" />
-            <element signature="e#1752#1753#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1438,7 +1414,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
           <caret line="8" column="11" lean-forward="false" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1446,18 +1421,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="746">
           <caret line="471" column="31" lean-forward="false" selection-start-line="471" selection-start-column="31" selection-end-line="471" selection-end-column="31" />
-          <folding>
-            <marker date="1507599198908" expanded="true" signature="4573:4698" ph="select from sys_customer" />
-            <marker date="1507599198908" expanded="true" signature="4783:4862" ph="delete from " />
-            <marker date="1507599198908" expanded="true" signature="4966:4990" ph="delete from " />
-            <marker date="1507599198908" expanded="true" signature="5170:6212" ph="insert into sys_customer... " />
-            <marker date="1507599198908" expanded="true" signature="9820:9853" ph="select count... sys_customer" />
-            <marker date="1507599198908" expanded="true" signature="12604:13825" ph="update sys_c... " />
-            <marker date="1507599198908" expanded="true" signature="14036:16118" ph="update sys_c... " />
-            <marker date="1507599198908" expanded="true" signature="16218:17302" ph="update sys_c... " />
-            <marker date="1507599198908" expanded="true" signature="17456:17768" ph="select disti... sys_customer" />
-            <marker date="1507599198908" expanded="true" signature="17456:17780" ph="select disti... sys_customer" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1465,28 +1428,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="286" column="11" lean-forward="true" selection-start-line="286" selection-start-column="11" selection-end-line="286" selection-end-column="11" />
-          <folding>
-            <marker date="1507599100988" expanded="true" signature="3275:3406" ph="select from sys_customer_account" />
-            <marker date="1507599100988" expanded="true" signature="3491:3576" ph="delete from " />
-            <marker date="1507599100988" expanded="true" signature="3687:3719" ph="delete from " />
-            <marker date="1507599100988" expanded="true" signature="3906:4245" ph="insert into sys_customer_account... " />
-            <marker date="1507599100988" expanded="true" signature="5602:5643" ph="select count... sys_customer_account" />
-            <marker date="1507599100988" expanded="true" signature="6728:7106" ph="update sys_c... " />
-            <marker date="1507599100988" expanded="true" signature="7324:7937" ph="update sys_c... " />
-            <marker date="1507599100988" expanded="true" signature="8044:8383" ph="update sys_c... " />
-            <marker date="1507599100988" expanded="true" signature="8479:8543" ph="SELECT user_... sys_user" />
-            <marker date="1507599100988" expanded="true" signature="8681:9013" ph="select disti... sys_customer_account" />
-            <marker date="1507599100988" expanded="true" signature="9058:9384" ph="INSERT INTO my_team... " />
-            <marker date="1507599100988" expanded="true" signature="9174:9384" ph="SELECT team_... sys_customer" />
-            <marker date="1507599100988" expanded="true" signature="9435:9721" ph="INSERT INTO team_department... " />
-            <marker date="1507599100988" expanded="true" signature="9545:9721" ph="SELECT depar... sys_customer" />
-            <marker date="1507599100988" expanded="true" signature="9766:10147" ph="INSERT INTO user... " />
-            <marker date="1507599100988" expanded="true" signature="9905:10147" ph="SELECT custo... sys_customer" />
-            <marker date="1507599100988" expanded="true" signature="10196:10412" ph="INSERT INTO department_position... " />
-            <marker date="1507599100988" expanded="true" signature="10283:10412" ph="SELECT posit... sys_customer" />
-            <marker date="1507599100988" expanded="true" signature="10459:10919" ph="INSERT INTO qm_branch... " />
-            <marker date="1507599100988" expanded="true" signature="10459:10932" ph="INSERT INTO qm_branch... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1494,7 +1435,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
           <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1502,15 +1442,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
           <caret line="119" column="23" lean-forward="true" selection-start-line="119" selection-start-column="23" selection-end-line="119" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qm/backend/controller/SysCustomerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="50" column="6" lean-forward="false" selection-start-line="50" selection-start-column="6" selection-end-line="50" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1518,28 +1449,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
           <caret line="230" column="0" lean-forward="true" selection-start-line="230" selection-start-column="0" selection-end-line="230" selection-end-column="0" />
-          <folding>
-            <marker date="1506156398275" expanded="true" signature="3357:3492" ph="select from qm_permission" />
-            <marker date="1506156398275" expanded="true" signature="3577:3666" ph="delete from " />
-            <marker date="1506156398275" expanded="true" signature="3771:3796" ph="delete from " />
-            <marker date="1506156398275" expanded="true" signature="3977:4367" ph="insert into qm_permission... " />
-            <marker date="1506156398275" expanded="true" signature="5817:5851" ph="select count... qm_permission" />
-            <marker date="1506156398275" expanded="true" signature="7014:7443" ph="update qm_pe... " />
-            <marker date="1506156398275" expanded="true" signature="7655:8341" ph="update qm_pe... " />
-            <marker date="1506156398275" expanded="true" signature="8442:8832" ph="update qm_pe... " />
-            <marker date="1506156398275" expanded="true" signature="9714:9950" ph="select sum(c... count" />
-            <marker date="1506156398275" expanded="true" signature="9742:9944" ph="select count... " />
-            <marker date="1506156398275" expanded="true" signature="10003:10076" ph="DELETE FROM " />
-            <marker date="1506156398275" expanded="true" signature="10152:10243" ph="SELECT permi... qm_permission_re" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qm/backend/controller/QmPermissionController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qm/backend/pojo/QmPermission.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="92" column="24" lean-forward="true" selection-start-line="92" selection-start-column="24" selection-end-line="92" selection-end-column="24" />
-          <folding />
+        <state relative-caret-position="168">
+          <caret line="7" column="35" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -1551,18 +1467,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qm/backend/pojo/QmPermission.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qm/backend/controller/QmPermissionController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="7" column="35" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="35" />
+        <state relative-caret-position="1368">
+          <caret line="72" column="56" lean-forward="false" selection-start-line="72" selection-start-column="56" selection-end-line="72" selection-end-column="56" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/qm/backend/service/QmPermissionServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="72" column="63" lean-forward="false" selection-start-line="72" selection-start-column="63" selection-end-line="72" selection-end-column="63" />
+        <state relative-caret-position="1680">
+          <caret line="88" column="58" lean-forward="false" selection-start-line="88" selection-start-column="58" selection-end-line="88" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qm/backend/controller/SysCustomerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
           <folding />
         </state>
       </provider>
