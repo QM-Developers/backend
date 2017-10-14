@@ -1,0 +1,166 @@
+<link rel="stylesheet" href="../../pages/interface/json.css">
+<div class="admin-content-body">
+    <div class="am-cf am-padding am-padding-bottom-0">
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">接口信息</strong> /
+            <small>Interface information</small>
+        </div>
+    </div>
+
+    <hr/>
+
+    <div class="am-g">
+        <div class="am-u-sm-12 am-u-md-8">
+            <form class="am-form am-form-horizontal">
+                <div class="am-form-group">
+                    <label class="am-u-sm-3 am-form-label">接口Id</label>
+                    <div class="am-u-sm-9">
+                        <input type="text" id="info-id" placeholder="无特殊情况，不用填写">
+                    </div>
+                </div>
+
+                <div class="am-form-group">
+                    <label class="am-u-sm-3 am-form-label">接口名称</label>
+                    <div class="am-u-sm-9">
+                        <input type="text" id="info-name">
+                    </div>
+                </div>
+
+                <div class="am-form-group">
+                    <label class="am-u-sm-3 am-form-label">请求地址</label>
+                    <div class="am-u-sm-9">
+                        <input type="text" id="info-path">
+                    </div>
+                </div>
+
+                <div class="am-form-group">
+                    <label class="am-u-sm-3 am-form-label">请求方式</label>
+                    <div class="am-u-sm-9">
+                        <select id="info-method">
+                            <option>POST</option>
+                            <option>GET</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="am-form-group">
+                    <label class="am-u-sm-3 am-form-label">请求格式</label>
+                    <div class="am-u-sm-9">
+                        <select id="info-format">
+                            <option>JSON</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="am-form-group">
+                    <label class="am-u-sm-3 am-form-label">备注信息</label>
+                    <div class="am-u-sm-9">
+                        <textarea id="info-remark"></textarea>
+                    </div>
+                </div>
+                <div class="am-form-group">
+                    <label class="am-u-sm-3 am-form-label">请求参数</label>
+                    <div class="am-u-sm-9">
+                        <button onclick="save.appendRequestItem()" type="button" class="am-btn am-btn-default">添加请求参数</button>
+                    </div>
+                </div>
+
+                <div class="am-form-group">
+                    <label class="am-u-sm-3 am-form-label"></label>
+                    <div class="am-u-sm-9">
+                        <table class="am-table">
+                            <thead>
+                            <tr>
+                                <th>名称</th>
+                                <th>类型</th>
+                                <th>必填</th>
+                                <th>说明</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody id="request-list">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="am-form-group">
+                    <label class="am-u-sm-3 am-form-label">请求参数示例</label>
+                    <div class="am-u-sm-9">
+                        <input onblur="save.showRequestExample(this.value)" type="text">
+                    </div>
+                </div>
+                <div class="am-form-group">
+                    <label class="am-u-sm-3 am-form-label"></label>
+                    <div class="am-u-sm-9">
+                        <pre id="request-example">
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="am-form-group">
+                    <label class="am-u-sm-3 am-form-label">返回参数</label>
+                    <div class="am-u-sm-9">
+                        <button onclick="save.appendResponseItem()" type="button" class="am-btn am-btn-default">添加返回参数</button>
+                    </div>
+                </div>
+
+                <div class="am-form-group">
+                    <label class="am-u-sm-3 am-form-label"></label>
+                    <div class="am-u-sm-9">
+                        <table class="am-table">
+                            <thead>
+                            <tr>
+                                <th>名称</th>
+                                <th>类型</th>
+                                <th>说明</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody id="response-list">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="am-form-group">
+                    <label class="am-u-sm-3 am-form-label">返回参数示例</label>
+                    <div class="am-u-sm-9">
+                        <input onblur="save.showResponseExample(this.value)" type="text">
+                    </div>
+                </div>
+                <div class="am-form-group">
+                    <label class="am-u-sm-3 am-form-label"></label>
+                    <div class="am-u-sm-9">
+                        <pre id="response-example">
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="am-form-group">
+                    <label class="am-u-sm-3 am-form-label">更新说明</label>
+                    <div class="am-u-sm-9">
+                        <textarea id="update"></textarea>
+                    </div>
+                </div>
+
+                <div class="am-form-group">
+                    <div class="am-u-sm-9 am-u-sm-push-3">
+                        <button onclick="save.save();" type="button" class="am-btn am-btn-primary">保存</button>
+                        <button onclick="save.back();" type="button" class="am-btn am-btn-default">返回</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<footer class="admin-content-footer">
+    <hr>
+    <p class="am-padding-left">© 2014 AllMobilize, Inc. Licensed under MIT license.</p>
+</footer>
+
+<script type="text/javascript" src="../../script/md5/md5.min.js"></script>
+<script type="text/javascript" src="../interface/interface-save.js"></script>
+<script type="text/javascript">
+    save.init();
+</script>

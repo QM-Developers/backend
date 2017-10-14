@@ -1,0 +1,124 @@
+<link rel="stylesheet" href="../../script/zTree/zTreeStyle.css">
+<link rel="stylesheet" href="../../pages/interface/json.css">
+
+<div class="admin-content-body">
+    <div class="am-cf am-padding am-padding-bottom-0">
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">接口文档</strong> /
+            <small>Interface document</small>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="am-u-sm-1">
+        <ul id="type-tree" class="ztree"></ul>
+    </div>
+    <div class="am-u-sm-8 am-u-end">
+        <div class="am-form am-form-horizontal">
+            <div class="am-tabs" data-am-tabs="{noSwipe: 1}" id="doc-tab-demo-1">
+                <ul class="am-tabs-nav am-nav am-nav-tabs">
+                    <li class="am-active"><a href="#tab1">接口信息</a></li>
+                    <li><a href="#tab2">请求参数</a></li>
+                    <li><a href="#tab3">返回参数</a></li>
+                </ul>
+
+                <div class="am-tabs-bd">
+                    <div class="am-tab-panel am-fade am-in am-active" id="tab1">
+                        <div class="am-g am-margin-top">
+                            <div class="am-u-sm-4 am-u-md-2 am-text-right">接口名称</div>
+                            <div class="am-u-sm-8 am-u-md-10">
+                                123123
+                            </div>
+                        </div>
+
+                        <div class="am-g am-margin-top">
+                            <div class="am-u-sm-4 am-u-md-2 am-text-right">请求地址</div>
+                            <div class="am-u-sm-8 am-u-md-10">
+                                123123
+                            </div>
+                        </div>
+
+                        <div class="am-g am-margin-top">
+                            <div class="am-u-sm-4 am-u-md-2 am-text-right">请求方式</div>
+                            <div class="am-u-sm-8 am-u-md-10">
+                                123123
+                            </div>
+                        </div>
+
+                        <div class="am-g am-margin-top">
+                            <div class="am-u-sm-4 am-u-md-2 am-text-right">参数格式</div>
+                            <div class="am-u-sm-8 am-u-md-10">
+                                JSON
+                            </div>
+                        </div>
+
+                        <div class="am-g am-margin-top">
+                            <div class="am-u-sm-4 am-u-md-2 am-text-right">备注信息</div>
+                            <div class="am-u-sm-8 am-u-md-10">
+                                JSON
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="am-tab-panel am-fade" id="tab2">
+                        <table class="am-table">
+                            <thead>
+                            <tr>
+                                <th>名称</th>
+                                <th>类型</th>
+                                <th>必填</th>
+                                <th>说明</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                        <span>请求参数示例:</span>
+                        <pre id="request-example">
+                        </pre>
+                    </div>
+
+                    <div class="am-tab-panel am-fade" id="tab3">
+                        <table class="am-table">
+                            <thead>
+                            <tr>
+                                <th>名称</th>
+                                <th>类型</th>
+                                <th>说明</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                        <span>返回参数示例:</span>
+                        <pre id="response-example">
+                        </pre>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="am-form-group">
+                <div class="am-u-sm-9 am-u-sm-push-3">
+                    <button onclick="list.toSave();" type="button" class="am-btn am-btn-primary">添加</button>
+                    <button onclick="list.update();" type="button" class="am-btn am-btn-default">修改</button>
+                    <button onclick="list.remove();" type="button" class="am-btn am-btn-danger">删除</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="admin-content-footer">
+    <hr>
+    <p class="am-padding-left">© 2014 AllMobilize, Inc. Licensed under MIT license.</p>
+</footer>
+
+<script type="text/javascript" src="../../script/js/Constant.js"></script>
+<script type="text/javascript" src="../../script/zTree/jquery.ztree.all.min.js"></script>
+<script type="text/javascript" src="../../script/js/myjs.js"></script>
+<script type="text/javascript" src="../../pages/interface/json.js"></script>
+<script type="text/javascript" src="../../pages/interface/interface-list.js"></script>
+<script type="text/javascript">
+    list.init();
+</script>

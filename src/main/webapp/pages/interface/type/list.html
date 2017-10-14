@@ -1,0 +1,56 @@
+<link rel="stylesheet" href="../../script/zTree/zTreeStyle.css">
+
+<div class="admin-content-body">
+    <div class="am-cf am-padding am-padding-bottom-0">
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">接口分类</strong> /
+            <small>Interface type</small>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="am-u-sm-1">
+        <ul id="type-tree" class="ztree"></ul>
+    </div>
+    <div class="am-u-sm-8 am-u-end">
+        <div class="am-form am-form-horizontal">
+            <div class="am-form-group">
+                <label class="am-u-sm-3 am-form-label">分类名称</label>
+                <div class="am-u-sm-9">
+                    <input type="text" id="type-name" placeholder="类目名称">
+                    <hidden id="type-id"/>
+                </div>
+            </div>
+
+            <div class="am-form-group">
+                <label class="am-u-sm-3 am-form-label">上级分类</label>
+                <div class="am-u-sm-9">
+                    <select id="type-pid">
+                        <option value="0">无</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="am-form-group">
+                <div class="am-u-sm-9 am-u-sm-push-3">
+                    <button onclick="list.save();" type="button" class="am-btn am-btn-primary">添加</button>
+                    <button onclick="list.update();" type="button" class="am-btn am-btn-default">修改</button>
+                    <button onclick="list.remove();" type="button" class="am-btn am-btn-danger">删除</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="admin-content-footer">
+    <hr>
+    <p class="am-padding-left">© 2014 AllMobilize, Inc. Licensed under MIT license.</p>
+</footer>
+
+<script type="text/javascript" src="../../script/js/Constant.js"></script>
+<script type="text/javascript" src="../../script/zTree/jquery.ztree.all.min.js"></script>
+<script type="text/javascript" src="../../script/js/myjs.js"></script>
+<script type="text/javascript" src="../interface/type/list.js"></script>
+<script type="text/javascript">
+    list.init();
+</script>

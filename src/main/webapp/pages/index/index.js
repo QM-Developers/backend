@@ -152,4 +152,19 @@ var index = {
     {
         index.load("../qm_role/qm-role-save.html");
     },
+
+    loadInterfaceList:function ()
+    {
+        index.load("../interface/interface-list.html");
+    },
+
+    loadInterfaceType:function ()
+    {
+        index.load("../interface/type/list.html");
+    },
+
+    loadInterfaceSave:function ()
+    {
+        index.load("../interface/interface-save.html");
+    }
 };

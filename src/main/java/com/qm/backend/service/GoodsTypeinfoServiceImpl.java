@@ -3,6 +3,7 @@ package com.qm.backend.service;
 import com.alibaba.fastjson.JSONObject;
 import com.qm.backend.constant.KeyConstant;
 import com.qm.backend.constant.RequestConstant;
+import com.qm.backend.constant.StringConstant;
 import com.qm.backend.mapper.GoodsTypeinfoMapper;
 import com.qm.backend.pojo.GoodsTypeinfo;
 import com.qm.backend.pojo.GoodsTypeinfoExample;
@@ -45,7 +46,7 @@ public class GoodsTypeinfoServiceImpl implements GoodsTypeinfoService
     public String remove(SessionVO sessionVO, GoodsTypeinfo info)
     {
         if (mapper.countGoods(info.getGoodsTypeId()) > 0)
-            return JSONObject.toJSONString(new ResultVO((int) RequestConstant.FAILED_102,sessionVO.getToken()));
+            return JSONObject.toJSONString(new ResultVO((int) RequestConstant.FAILED_102, sessionVO.getToken()));
 
         int result = mapper.deleteByPrimaryKey(info.getGoodsTypeId());
 
@@ -107,7 +108,7 @@ public class GoodsTypeinfoServiceImpl implements GoodsTypeinfoService
             result.add(leaf);
         }
 
-        result = TreeUtil.addChild(result,"0");
+        result = TreeUtil.addChild(result, StringConstant.ZERO);
 
         return JSONObject.toJSONString(new ResultVO((int) RequestConstant.SUCCEED, sessionVO.getToken(), result));
     }
