@@ -8,4 +8,12 @@ public interface InterfaceInfoService
     String save(SessionVO sessionVO, InterfaceInfo info);
 
     String tree(SessionVO sessionVO);
+
+    String get(SessionVO sessionVO, InterfaceInfo info);
+
+    String update(SessionVO sessionVO, InterfaceInfo info);
+
+    String remove(SessionVO sessionVO, InterfaceInfo info);
+
+    String logList(SessionVO sessionVO);
 }

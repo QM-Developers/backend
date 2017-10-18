@@ -1,11 +1,19 @@
 {
-  "类目1":"选项A",
-  "类目2":"选项B",
-  "类目3":"选项C",
-  "信息1":"内容A",
-  "信息2":"内容B",
-  "信息3":"内容C",
-  "信息4":"内容D",
-  "信息5":"内容E",
-  "信息6":"内容F"
+  "result": {
+    "myTeamId": "10001",
+    "userImg": "",
+    "userPassword": "825682eafec59c2e1632828195133a52",
+    "userStatus": "u_st_2",
+    "roleId": "1002",
+    "departmentId": "9e8d946ef94b4795bd9218795354e631",
+    "userPhone": "13688888888",
+    "userName": "张三",
+    "userArea": "",
+    "userId": "89d9317fb3834353bcf2a507bee2eb82",
+    "token": "da8990b107b84cf980035927cce112721507599537351",
+    "myTeamName": "青麦科技",
+    "rCloudToken": "ZypIiVZ/7CQGt6N3CEHmYMjI4Hra9u5vGdGfTUsS9DueXKuGQ6VKSmO7prvGvfkJa3oxV2C7ZTbky5SopCd+iIEmiC9xAaMzcA9t/qaJJ/KdRcVnXULulKUMKvMgmUDLoF2PRj4w50o="
+  },
+  "state": 1,
+  "token": "9340f4f1eb1344299f84bc5e7686c5111508148937179"
 }

@@ -33,11 +33,18 @@ public class InterfaceTypeServiceImpl implements InterfaceTypeService
     public String save(SessionVO sessionVO, InterfaceType type)
     {
         type.setTypeId(IDGeneratorUtil.generator());
+        type.setInfoList(new ArrayList<>());
         type.setTypePid(StringUtil.isEmpty(type.getTypePid()) ? StringConstant.ZERO : type.getTypePid());
 
         if (ParameterUtil.objectIsNull(type))
             return JSONObject.toJSONString(new ResultVO((int) RequestConstant.FAILED_102, sessionVO.getToken()));
 
+        InterfaceType child = new InterfaceType();
+        child.setTypePid(type.getTypeId());
+        child.setTypeName("空");
+        child.setTypeId(IDGeneratorUtil.generator());
+
+        mapper.insert(child);
         int result = mapper.insert(type) < 1 ? RequestConstant.FAILED : RequestConstant.SUCCEED;
 
         return JSONObject.toJSONString(new ResultVO(result, sessionVO.getToken()));

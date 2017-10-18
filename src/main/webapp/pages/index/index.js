@@ -105,7 +105,7 @@ var index = {
         index.modalPassword.modal({'closeOnConfirm': false, 'closeViaDimmer': false});
     },
 
-    updatePassword:function ()
+    updatePassword: function ()
     {
         var p1 = $("#password1").val().trim();
         var p2 = $("#password2").val().trim();
@@ -121,7 +121,7 @@ var index = {
 
         params["userPassword"] = md5(p1);
 
-        myjs.ajax_post(url,params,function (data)
+        myjs.ajax_post(url, params, function (data)
         {
             if (data.state === Constant.permission_denied)
                 alert("权限不足");
@@ -133,38 +133,49 @@ var index = {
         });
     },
 
-    loadGoodsTypeList:function ()
+    loadGoodsTypeList: function ()
     {
         index.load("../goods/type-list.html");
     },
 
-    loadQMPermission:function ()
+    loadQMPermission: function ()
     {
         index.load("../qm_permission/qm-permission-list.html");
     },
 
-    loadQMRoleList:function ()
+    loadQMRoleList: function ()
     {
         index.load("../qm_role/qm-role-list.html");
     },
 
-    loadQMRoleSave:function ()
+    loadQMRoleSave: function ()
     {
         index.load("../qm_role/qm-role-save.html");
     },
 
-    loadInterfaceList:function ()
+    loadInterfaceList: function ()
     {
         index.load("../interface/interface-list.html");
     },
 
-    loadInterfaceType:function ()
+    loadInterfaceType: function ()
     {
         index.load("../interface/type/list.html");
     },
 
-    loadInterfaceSave:function ()
+    loadInterfaceSave: function ()
     {
         index.load("../interface/interface-save.html");
+    },
+
+    loadInterfaceUpdateLog: function ()
+    {
+        index.load("../interface/interface-log.html");
+    },
+
+    toInterfaceList:function ()
+    {
+        $("#hidden-interface-id").val("");
+        index.load("../interface/interface-list.html");
     }
 };

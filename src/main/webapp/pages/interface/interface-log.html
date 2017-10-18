@@ -1,10 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<link rel="stylesheet" href="../../script/zTree/zTreeStyle.css">
+<link rel="stylesheet" href="../../pages/interface/json.css">
 
-</body>
-</html>
+<div class="admin-content-body">
+    <div class="am-cf am-padding am-padding-bottom-0">
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">更新日志</strong> /
+            <small>Interface Log</small>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="am-u-sm-12">
+        <table class="am-table am-table-bordered am-table-hover">
+            <thead>
+            <tr>
+                <th>接口</th>
+                <th>更新</th>
+                <th>时间</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody id="log-list">
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<footer class="admin-content-footer">
+    <hr>
+    <p class="am-padding-left">© 2014 AllMobilize, Inc. Licensed under MIT license.</p>
+</footer>
+
+<script type="text/javascript" src="../../script/js/Constant.js"></script>
+<script type="text/javascript" src="../../script/zTree/jquery.ztree.all.min.js"></script>
+<script type="text/javascript" src="../../script/js/myjs.js"></script>
+<script type="text/javascript" src="../../script/js/date.js"></script>
+<script type="text/javascript" src="../../pages/interface/json.js"></script>
+<script type="text/javascript" src="../../pages/interface/interface-log.js"></script>
+<script type="text/javascript">
+    log.init();
+</script>

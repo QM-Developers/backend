@@ -1,5 +1,7 @@
 package com.qm.backend.pojo;
 
+import java.util.List;
+
 public class InterfaceInfo {
     private String infoId;
 
@@ -18,9 +20,11 @@ public class InterfaceInfo {
     private String responseExample;
 
     private String typeId;
-    private String request;
-    private String response;
+    private List<InterfaceRequest> requestList;
+    private List<InterfaceResponse> responseList;
     private String update;
+    private String response;
+    private String request;
 
     public String getInfoId() {
         return infoId;
@@ -94,14 +98,34 @@ public class InterfaceInfo {
         this.typeId = typeId == null ? null : typeId.trim();
     }
 
-    public String getRequest()
+    public void setRequestList(List<InterfaceRequest> requestList)
     {
-        return request;
+        this.requestList = requestList;
     }
 
-    public void setRequest(String request)
+    public List<InterfaceRequest> getRequestList()
     {
-        this.request = request;
+        return requestList;
+    }
+
+    public void setResponseList(List<InterfaceResponse> responseList)
+    {
+        this.responseList = responseList;
+    }
+
+    public List<InterfaceResponse> getResponseList()
+    {
+        return responseList;
+    }
+
+    public String getUpdate()
+    {
+        return update;
+    }
+
+    public void setUpdate(String update)
+    {
+        this.update = update;
     }
 
     public String getResponse()
@@ -114,13 +138,13 @@ public class InterfaceInfo {
         this.response = response;
     }
 
-    public String getUpdate()
+    public String getRequest()
     {
-        return update;
+        return request;
     }
 
-    public void setUpdate(String update)
+    public void setRequest(String request)
     {
-        this.update = update;
+        this.request = request;
     }
 }

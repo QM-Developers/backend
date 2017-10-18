@@ -46,24 +46,10 @@ public class InterfaceInfoServiceImpl implements InterfaceInfoService
             throw new RuntimeException(Constant.SAVE_FAILED);
 
         JSONArray rArr = JSONArray.parseArray(info.getRequest());
-        for (Object json : rArr)
-        {
-            InterfaceRequest request = JSONObject.parseObject(json.toString(), InterfaceRequest.class);
-            request.setRequestId(IDGeneratorUtil.generator());
-            request.setInfoId(info.getInfoId());
-            if (requestMapper.insert(request) < 1)
-                throw new RuntimeException(Constant.SAVE_FAILED);
-        }
+        saveRequest(rArr, info.getInfoId());
 
         rArr = JSONArray.parseArray(info.getResponse());
-        for (Object json : rArr)
-        {
-            InterfaceResponse response = JSONObject.parseObject(json.toString(), InterfaceResponse.class);
-            response.setResponseId(IDGeneratorUtil.generator());
-            response.setInfoId(info.getInfoId());
-            if (responseMapper.insert(response) < 1)
-                throw new RuntimeException(Constant.SAVE_FAILED);
-        }
+        saveResponse(rArr, info.getInfoId());
 
         InterfaceUpdate update = new InterfaceUpdate();
         update.setInfoId(info.getInfoId());
@@ -113,5 +99,127 @@ public class InterfaceInfoServiceImpl implements InterfaceInfoService
         result = TreeUtil.addChild(result, StringConstant.ZERO);
 
         return JSONObject.toJSONString(new ResultVO((int) RequestConstant.SUCCEED, sessionVO.getToken(), result));
+    }
+
+    @Override
+    public String get(SessionVO sessionVO, InterfaceInfo info)
+    {
+        InterfaceInfo result = infoMapper.selectByPrimaryKey(info.getInfoId());
+        if (result == null)
+            return JSONObject.toJSONString(new ResultVO((int) RequestConstant.FAILED, sessionVO.getToken()));
+
+        InterfaceRequestExample requestExample = new InterfaceRequestExample();
+        requestExample.setOrderByClause("sort");
+        InterfaceRequestExample.Criteria requestCriteria = requestExample.createCriteria();
+        requestCriteria.andInfoIdEqualTo(result.getInfoId());
+
+        InterfaceResponseExample responseExample = new InterfaceResponseExample();
+        responseExample.setOrderByClause("sort");
+        InterfaceResponseExample.Criteria responseCriteria = responseExample.createCriteria();
+        responseCriteria.andInfoIdEqualTo(result.getInfoId());
+
+        result.setRequestList(requestMapper.selectByExample(requestExample));
+        result.setResponseList(responseMapper.selectByExample(responseExample));
+
+        return JSONObject.toJSONString(new ResultVO((int) RequestConstant.SUCCEED, sessionVO.getToken(), result));
+    }
+
+    @Override
+    public String update(SessionVO sessionVO, InterfaceInfo info)
+    {
+        if (infoMapper.updateByPrimaryKeySelective(info) < 1)
+            throw new RuntimeException(Constant.SAVE_FAILED);
+
+        InterfaceRequestExample requestExample = new InterfaceRequestExample();
+        InterfaceRequestExample.Criteria requestCriteria = requestExample.createCriteria();
+        requestCriteria.andInfoIdEqualTo(info.getInfoId());
+        requestMapper.deleteByExample(requestExample);
+
+        InterfaceResponseExample responseExample = new InterfaceResponseExample();
+        InterfaceResponseExample.Criteria responseCriteria = responseExample.createCriteria();
+        responseCriteria.andInfoIdEqualTo(info.getInfoId());
+        responseMapper.deleteByExample(responseExample);
+
+        JSONArray rArr = JSONArray.parseArray(info.getRequest());
+        saveRequest(rArr, info.getInfoId());
+
+        rArr = JSONArray.parseArray(info.getResponse());
+        saveResponse(rArr, info.getInfoId());
+
+        InterfaceUpdate update = new InterfaceUpdate();
+        update.setInfoId(info.getInfoId());
+        update.setInfoName(info.getInfoName());
+        update.setUpdateDate(new Date());
+        update.setUpdateText(info.getUpdate());
+        update.setUpdateId(IDGeneratorUtil.generator());
+
+        if (updateMapper.insert(update) < 1)
+            throw new RuntimeException(Constant.SAVE_FAILED);
+
+        return JSONObject.toJSONString(new ResultVO((int) RequestConstant.SUCCEED, sessionVO.getToken(), info.getInfoId()));
+    }
+
+    @Override
+    public String remove(SessionVO sessionVO, InterfaceInfo info)
+    {
+        info = infoMapper.selectByPrimaryKey(info.getInfoId());
+        if (info == null)
+            return JSONObject.toJSONString(new ResultVO((int) RequestConstant.FAILED, sessionVO.getToken()));
+
+        InterfaceRequestExample requestExample = new InterfaceRequestExample();
+        InterfaceRequestExample.Criteria requestCriteria = requestExample.createCriteria();
+        requestCriteria.andInfoIdEqualTo(info.getInfoId());
+        requestMapper.deleteByExample(requestExample);
+
+        InterfaceResponseExample responseExample = new InterfaceResponseExample();
+        InterfaceResponseExample.Criteria responseCriteria = responseExample.createCriteria();
+        responseCriteria.andInfoIdEqualTo(info.getInfoId());
+        responseMapper.deleteByExample(responseExample);
+
+        InterfaceUpdate update = new InterfaceUpdate();
+        update.setInfoId(info.getInfoId());
+        update.setInfoName(info.getInfoName());
+        update.setUpdateDate(new Date());
+        update.setUpdateText("删除接口");
+        update.setUpdateId(IDGeneratorUtil.generator());
+
+        if (infoMapper.deleteByPrimaryKey(info.getInfoId()) < 1)
+            throw new RuntimeException(Constant.SAVE_FAILED);
+
+        return JSONObject.toJSONString(new ResultVO((int) RequestConstant.SUCCEED, sessionVO.getToken()));
+    }
+
+    @Override
+    public String logList(SessionVO sessionVO)
+    {
+        InterfaceUpdateExample example = new InterfaceUpdateExample();
+        example.setOrderByClause("update_date desc");
+        List<InterfaceUpdate> result = updateMapper.selectByExample(example);
+
+        return JSONObject.toJSONString(new ResultVO((int) RequestConstant.SUCCEED, sessionVO.getToken(), result));
+    }
+
+    private void saveResponse(JSONArray rArr, String infoId)
+    {
+        for (Object json : rArr)
+        {
+            InterfaceResponse response = JSONObject.parseObject(json.toString(), InterfaceResponse.class);
+            response.setResponseId(IDGeneratorUtil.generator());
+            response.setInfoId(infoId);
+            if (responseMapper.insert(response) < 1)
+                throw new RuntimeException(Constant.SAVE_FAILED);
+        }
+    }
+
+    private void saveRequest(JSONArray rArr, String infoId)
+    {
+        for (Object json : rArr)
+        {
+            InterfaceRequest request = JSONObject.parseObject(json.toString(), InterfaceRequest.class);
+            request.setRequestId(IDGeneratorUtil.generator());
+            request.setInfoId(infoId);
+            if (requestMapper.insert(request) < 1)
+                throw new RuntimeException(Constant.SAVE_FAILED);
+        }
     }
 }

@@ -70,17 +70,22 @@ var list = {
         params["typeName"] = $("#type-name").val().trim();
         params["typePid"] = $("#type-pid").val().trim();
 
-        myjs.ajax_post(url, params, function (data)
-        {
-            if (data.state === Constant.permission_denied)
-                alert("权限不足");
-            else if (data.state === Constant.succeed)
-                list.listTypeTree();
-        });
+        console.log(params);
+
+        // myjs.ajax_post(url, params, function (data)
+        // {
+        //     if (data.state === Constant.permission_denied)
+        //         alert("权限不足");
+        //     else if (data.state === Constant.succeed)
+        //         list.listTypeTree();
+        // });
     },
 
     remove: function ()
     {
+        if (!confirm("确定删除吗"))
+            return;
+
         var url = Constant.getUrl("/interface/type/remove");
         var params = {};
 

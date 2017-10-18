@@ -144,7 +144,7 @@ create table interface_info(
    info_path varchar(255) not null, -- 接口的请求路径
    info_method varchar(10) not null,   -- 请求方式
    into_format varchar(10) not null,   -- 参数格式
-   info_remark varchar(255) not null,   -- 备注
+   info_remark text not null,   -- 备注
    request_example text,   -- 请求参数示例
    response_example text,   -- 返回参数示例
    type_id varchar(35) not null   -- 接口类型的Id
