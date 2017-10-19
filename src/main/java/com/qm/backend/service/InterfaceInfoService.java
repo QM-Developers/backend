@@ -1,6 +1,7 @@
 package com.qm.backend.service;
 
 import com.qm.backend.pojo.InterfaceInfo;
+import com.qm.backend.vo.PageVO;
 import com.qm.backend.vo.SessionVO;
 
 public interface InterfaceInfoService
@@ -15,5 +16,5 @@ public interface InterfaceInfoService
 
     String remove(SessionVO sessionVO, InterfaceInfo info);
 
-    String logList(SessionVO sessionVO);
+    String logList(SessionVO sessionVO, PageVO pageVO);
 }

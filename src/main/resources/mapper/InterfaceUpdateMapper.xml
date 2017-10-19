@@ -69,20 +69,6 @@
   <sql id="Base_Column_List">
     update_id, update_date, update_text, info_id, info_name
   </sql>
-  <select id="selectByExample" parameterType="com.qm.backend.pojo.InterfaceUpdateExample" resultMap="BaseResultMap">
-    select
-    <if test="distinct">
-      distinct
-    </if>
-    <include refid="Base_Column_List" />
-    from interface_update
-    <if test="_parameter != null">
-      <include refid="Example_Where_Clause" />
-    </if>
-    <if test="orderByClause != null">
-      order by ${orderByClause}
-    </if>
-  </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
@@ -208,4 +194,45 @@
       info_name = #{infoName,jdbcType=VARCHAR}
     where update_id = #{updateId,jdbcType=VARCHAR}
   </update>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <select id="selectByExample" parameterType="com.qm.backend.pojo.InterfaceUpdateExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from interface_update
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <if test="pageNum != null and pageSize != null">
+      LIMIT #{pageNum},#{pageSize}
+    </if>
+  </select>
+
 </mapper>

@@ -74,20 +74,6 @@
     info_id, info_name, info_path, info_method, into_format, info_remark, request_example, 
     response_example, type_id
   </sql>
-  <select id="selectByExample" parameterType="com.qm.backend.pojo.InterfaceInfoExample" resultMap="BaseResultMap">
-    select
-    <if test="distinct">
-      distinct
-    </if>
-    <include refid="Base_Column_List" />
-    from interface_info
-    <if test="_parameter != null">
-      <include refid="Example_Where_Clause" />
-    </if>
-    <if test="orderByClause != null">
-      order by ${orderByClause}
-    </if>
-  </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
@@ -273,4 +259,18 @@
       type_id = #{typeId,jdbcType=VARCHAR}
     where info_id = #{infoId,jdbcType=VARCHAR}
   </update>
+  <select id="selectByExample" parameterType="com.qm.backend.pojo.InterfaceInfoExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from interface_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
 </mapper>

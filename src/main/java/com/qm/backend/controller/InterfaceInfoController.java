@@ -5,6 +5,7 @@ import com.qm.backend.constant.RequestConstant;
 import com.qm.backend.pojo.InterfaceInfo;
 import com.qm.backend.pojo.QmPermission;
 import com.qm.backend.service.InterfaceInfoService;
+import com.qm.backend.vo.PageVO;
 import com.qm.backend.vo.SessionVO;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -113,10 +114,10 @@ public class InterfaceInfoController
      */
     @RequestMapping(value = PREFIX + "log/list", method = POST, produces = {RequestConstant.CONTENT_TYPE})
     @ResponseBody
-    public String logList(HttpServletRequest request)
+    public String logList(HttpServletRequest request, PageVO pageVO)
     {
         SessionVO sessionVO = (SessionVO) request.getAttribute(KeyConstant.LOGIN_INFO);
 
-        return service.logList(sessionVO);
+        return service.logList(sessionVO,pageVO);
     }
 }

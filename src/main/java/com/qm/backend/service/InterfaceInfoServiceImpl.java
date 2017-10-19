@@ -3,13 +3,13 @@ package com.qm.backend.service;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.qm.backend.constant.Constant;
+import com.qm.backend.constant.KeyConstant;
 import com.qm.backend.constant.RequestConstant;
 import com.qm.backend.constant.StringConstant;
 import com.qm.backend.mapper.*;
 import com.qm.backend.pojo.*;
-import com.qm.backend.util.IDGeneratorUtil;
-import com.qm.backend.util.StringUtil;
-import com.qm.backend.util.TreeUtil;
+import com.qm.backend.util.*;
+import com.qm.backend.vo.PageVO;
 import com.qm.backend.vo.ResultVO;
 import com.qm.backend.vo.SessionVO;
 import com.qm.backend.vo.TreeVO;
@@ -190,13 +190,23 @@ public class InterfaceInfoServiceImpl implements InterfaceInfoService
     }
 
     @Override
-    public String logList(SessionVO sessionVO)
+    public String logList(SessionVO sessionVO, PageVO pageVO)
     {
+        if (ParameterUtil.objectIsNull(pageVO))
+            return JSONObject.toJSONString(new ResultVO((int) RequestConstant.FAILED_102, sessionVO.getToken()));
+
         InterfaceUpdateExample example = new InterfaceUpdateExample();
+        example.setPageNum(PagingUtil.getStart(pageVO.getPageNum(), pageVO.getPageSize()));
+        example.setPageSize(pageVO.getPageSize());
+
         example.setOrderByClause("update_date desc");
         List<InterfaceUpdate> result = updateMapper.selectByExample(example);
+        int pageCount = PagingUtil.getCount((int) updateMapper.countByExample(example),pageVO.getPageSize());
+        JSONObject json = (JSONObject) JSONObject.toJSON(new ResultVO((int) RequestConstant.SUCCEED, sessionVO.getToken(), result));
 
-        return JSONObject.toJSONString(new ResultVO((int) RequestConstant.SUCCEED, sessionVO.getToken(), result));
+        json.put(KeyConstant.PAGE_COUNT, pageCount);
+
+        return json.toJSONString();
     }
 
     private void saveResponse(JSONArray rArr, String infoId)
